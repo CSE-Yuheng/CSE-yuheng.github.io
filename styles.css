@@ -1,8 +1,57 @@
+/* General page styling */
 body {
-    background-color: wheat;
-    font-family: Arial, Helvetica, sans-serif;
-}
-h1 {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* Heading styling */
+  h1 {
     text-align: center;
-    color:darkblue;
-}
+    color: #333;
+  }
+  
+  h2 {
+    color: #555;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  
+  /* About section styling */
+  .about {
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  /* Skills section styling */
+  .skills {
+    background-color: #dfe6e9;
+    padding: 20px;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  /* Projects section styling */
+  .projects {
+    background-color: #b2bec3;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  /* Contact section styling */
+  .contact {
+    background-color: #81ecec;
+    padding: 20px;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  /* Additional styling */
+  div {
+    margin: 10px 0;
+  }
+  
