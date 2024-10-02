@@ -34,15 +34,39 @@ body {
     color: #333;
   }
   
-  /* Projects section styling */
-  .projects { display:flex; flex-wrap:wrap; } /* condensed to save space */
-.project {
-width: 30%;
-margin: 10px;
-padding: 20px 10px;
-background: white; /* pick a color */
-border-radius: 25%;
+ /* Projects section styling */
+.projects {
+    background-color: #ffeaa7; /* Light yellow background */
+    padding: 20px;
+    border-radius: 5px;
+    color: #333;
+    margin-top: 40px; /* Add margin at the top */
 }
+
+.project {
+    background-color: #fff; /* White background for individual projects */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    padding: 15px; /* Add padding */
+    margin-bottom: 20px; /* Space between projects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.project h3 {
+    margin: 0 0 10px; /* Margin below the title */
+}
+
+.project img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Round corners of images */
+}
+
+.project p {
+    color: #555; /* Darker text for project descriptions */
+    margin-top: 10px; /* Margin above the description */
+}
+
   
   /* Contact section styling */
   .contact {
