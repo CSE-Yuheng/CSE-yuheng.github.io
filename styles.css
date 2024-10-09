@@ -4,18 +4,25 @@ body {
   background-color: #f5f5f5;
   margin: 0;
   padding: 20px;
-}
-
-/* Heading styling */
-h1 {
-  text-align: center;
+  line-height: 1.6;
   color: #333;
 }
 
-h2 {
-  color: #555;
-  margin-top: 40px;
-  margin-bottom: 10px;
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #2d98da;
+  color: white;
+  border-radius: 5px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.2em;
 }
 
 /* About section styling */
@@ -23,7 +30,12 @@ h2 {
   background-color: #eaeaea;
   padding: 20px;
   border-radius: 5px;
-  color: #333;
+  margin-top: 20px;
+}
+
+.about h2 {
+  font-size: 1.8em;
+  color: #2d98da;
 }
 
 /* Skills section styling */
@@ -31,50 +43,94 @@ h2 {
   background-color: #dfe6e9;
   padding: 20px;
   border-radius: 5px;
-  color: #333;
+  margin-top: 20px;
+}
+
+.skills h2 {
+  font-size: 1.8em;
+  color: #2d98da;
+}
+
+.skills ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.skills ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
 }
 
 /* Projects section styling */
 .projects {
-  background-color: #ffeaa7; /* Light yellow background */
+  background-color: #ffeaa7;
   padding: 20px;
   border-radius: 5px;
-  color: #333;
-  margin-top: 40px; /* Add margin at the top */
+  margin-top: 40px;
 }
 
 .project {
-  background-color: #fff; /* White background for individual projects */
-  border: 1px solid #ccc; /* Light gray border */
+  background-color: white;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 15px; /* Add padding */
-  margin-bottom: 20px; /* Space between projects */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project h3 {
-  margin: 0 0 10px; /* Margin below the title */
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #2d98da;
 }
 
 .project img {
-  max-width: 100%; /* Make images responsive */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 5px; /* Round corners of images */
-  max-width: 300px; /* Limit the maximum width of images */
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .project p {
-  color: #555; /* Darker text for project descriptions */
-  margin-top: 10px; /* Margin above the description */
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Affinity Diagram section styling */
+.affinity-diagram {
+  background-color: #e0f7fa;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.affinity-diagram h2 {
+  font-size: 1.8em;
+  color: #007bff;
+}
+
+.affinity-diagram img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.affinity-diagram a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.affinity-diagram a:hover {
+  text-decoration: underline;
 }
 
 /* Sketches section styling */
 .sketches {
-  background-color: #f9f9f9;
+  background-color: #f0f9ff;
   padding: 20px;
   border-radius: 5px;
   margin-top: 40px;
-  color: #333;
 }
 
 .sketch {
@@ -88,18 +144,20 @@ h2 {
 
 .sketch h3 {
   margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #2d98da;
 }
 
 .sketch img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
-  max-width: 300px; /* Limit the maximum width of images */
+  margin-bottom: 10px;
 }
 
 .sketch a {
   text-decoration: none;
-  color: #007bff; /* Blue color for links */
+  color: #007bff;
 }
 
 .sketch a:hover {
@@ -111,12 +169,17 @@ h2 {
   background-color: #81ecec;
   padding: 20px;
   border-radius: 5px;
-  color: #333;
+  margin-top: 40px;
+  text-align: center;
 }
 
-/* Additional styling */
-div {
-  margin: 10px 0;
+.contact h2 {
+  font-size: 1.8em;
+  color: #2d98da;
+}
+
+.contact p {
+  font-size: 1.2em;
 }
 
 /* Footer styling */
@@ -126,6 +189,7 @@ footer {
   color: #777;
   font-size: 14px;
 }
+
 
 
   
