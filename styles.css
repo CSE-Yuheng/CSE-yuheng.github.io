@@ -60,6 +60,7 @@ h2 {
   max-width: 100%; /* Make images responsive */
   height: auto; /* Maintain aspect ratio */
   border-radius: 5px; /* Round corners of images */
+  max-width: 300px; /* Limit the maximum width of images */
 }
 
 .project p {
@@ -93,6 +94,7 @@ h2 {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+  max-width: 300px; /* Limit the maximum width of images */
 }
 
 .sketch a {
@@ -124,5 +126,6 @@ footer {
   color: #777;
   font-size: 14px;
 }
+
 
   
