@@ -93,6 +93,10 @@ header p {
   border-radius: 10px;
   margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .project {
@@ -119,6 +123,7 @@ header p {
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 
 .project p {
@@ -133,6 +138,10 @@ header p {
   border-radius: 10px;
   margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .affinity-diagram h2 {
@@ -156,6 +165,7 @@ header p {
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 
 /* Sketches section styling */
@@ -165,6 +175,10 @@ header p {
   border-radius: 10px;
   margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .sketch {
@@ -191,6 +205,7 @@ header p {
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 
 .sketch a {
@@ -231,6 +246,23 @@ footer {
   color: #95a5a6;
   font-size: 0.9em;
 }
+
+/* Ensure images are responsive and adjust their size */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Restrict section width */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 
 
 
