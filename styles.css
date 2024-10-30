@@ -38,6 +38,17 @@ header p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
+.about-content {
+    display: flex;
+    align-items: center; /* Aligns the image and text vertically */
+}
+
+.profile-pic {
+    width: 150px; /* Adjust the size as needed */
+    margin-right: 20px; /* Space between image and text */
+}
+
+
 .about h2 {
   font-size: 2em;
   color: #4b6584;
