@@ -1,41 +1,116 @@
-/* General page styling */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4; /* Lighter grey for a softer look */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap');
+
+/* Basic reset for margin and padding */
+* {
   margin: 0;
-  padding: 20px;
-  line-height: 1.6;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  background-color: #f4f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Headers */
 header {
   text-align: center;
-  padding: 20px;
-  background-color: #34568B; /* Rich blue for a professional feel */
+  padding: 30px;
+  background-color: #34568B;
   color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  margin: 0;
   font-size: 2.5em;
   font-weight: 700;
 }
 
 header p {
   font-size: 1.2em;
-  font-style: italic;
   margin-top: 5px;
 }
 
-/* About section styling */
-.about {
-  background-color: #DADADA; /* Light grey for softer contrast */
+/* Navigation Bar */
+.navbar-brand {
+  display: flex;
+}
+
+.navbarScroll.navbarDark {
+  background-color: #000;
+}
+
+.nav-link {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+
+.nav-item {
+  margin-right: 5%;
+}
+
+.collapse.navbar-collapse {
+  overflow: fit-content;
+}
+
+/* Buttons and Links */
+.buttons-container, .btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  max-width: 300px;
+  margin: 2%;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  border-color: #6c5ce7; /* Soft purple */
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
   padding: 20px;
-  border-radius: 5px;
-  margin-top: 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  color: #95a5a6;
+  font-size: 0.9em;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* Section Styles */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Specific Section Styles */
+.about, .skills, .projects {
+  margin-top: 30px;
 }
 
 .about-content {
@@ -44,85 +119,37 @@ header p {
 }
 
 .profile-pic {
-  width: 120px; /* Smaller size for balance */
-  margin-right: 15px;
-  border: 3px solid #34568B; /* Styled border to frame the picture */
+  width: 120px;
+  margin-right: 20px;
+  border: 3px solid #34568B;
 }
 
-.about h2 {
-  font-size: 1.8em;
-  color: #34568B;
-  margin-bottom: 10px;
-}
-
-.about p {
-  font-size: 1.1em;
-  color: #555; /* Darker for better readability */
-}
-
-/* Skills section styling */
-.skills {
-  background-color: #EFEFEF; /* Soft white for a clean look */
-  padding: 20px;
-  border-radius: 5px;
-  margin-top: 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
-}
-
-.skills h2 {
-  font-size: 1.8em;
-  color: #34568B;
-  margin-bottom: 10px;
-}
-
-.skills ul li {
-  font-size: 1.1em;
-  color: #555;
-  margin-bottom: 8px;
-  padding-left: 15px;
-}
-
-/* Projects section styling */
 .projects {
-  background-color: #FFD700; /* Muted gold for a premium feel */
-  padding: 20px;
-  border-radius: 5px;
-  margin-top: 20px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Ensures even distribution of space */
+  justify-content: space-between;
 }
 
 .project {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 15px;
+  width: calc(33.33% - 20px);
   margin: 10px;
-  width: calc(33% - 20px); /* Three items per row with spacing */
-  transition: box-shadow 0.3s ease;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
-.project img {
-  width: 100%; /* Full width of the container */
-  height: auto;
-  margin-bottom: 10px;
+.project:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust responsiveness and refine layout */
 @media (max-width: 768px) {
   .project {
-    width: calc(50% - 20px); /* Two items per row in smaller screens */
+    width: calc(50% - 20px); /* Adjust for smaller screens */
   }
 
-  .about-content, .affinity-diagram, .sketches {
+  .about-content, .projects {
     flex-direction: column;
     align-items: center;
-  }
-
-  .profile-pic, .affinity-diagram img, .sketch img {
-    width: 80%; /* Larger size for single column layout */
   }
 }
 
