@@ -1,128 +1,131 @@
 /* General page styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f9f9;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-    color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4; /* Lighter grey for a softer look */
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
 }
 
 header {
-    text-align: center;
-    padding: 30px;
-    background-color: #4b6584;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  background-color: #34568B; /* Rich blue for a professional feel */
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 3em;
-    font-weight: 700;
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 700;
 }
 
 header p {
-    font-size: 1.3em;
-    font-style: italic;
-    margin-top: 10px;
+  font-size: 1.2em;
+  font-style: italic;
+  margin-top: 5px;
 }
 
 /* About section styling */
 .about {
-    background-color: #d1d8e0;
-    padding: 25px;
-    border-radius: 10px;
-    margin-top: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background-color: #DADADA; /* Light grey for softer contrast */
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
 }
 
 .about-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile-pic {
-    width: 150px;
-    margin-right: 20px;
-    border: 5px solid #4b6584; /* Frame for profile picture */
+  width: 120px; /* Smaller size for balance */
+  margin-right: 15px;
+  border: 3px solid #34568B; /* Styled border to frame the picture */
 }
 
 .about h2 {
-    font-size: 2em;
-    color: #4b6584;
-    margin-bottom: 15px;
+  font-size: 1.8em;
+  color: #34568B;
+  margin-bottom: 10px;
 }
 
 .about p {
-    font-size: 1.2em;
-    color: #34495e;
+  font-size: 1.1em;
+  color: #555; /* Darker for better readability */
+}
+
+/* Skills section styling */
+.skills {
+  background-color: #EFEFEF; /* Soft white for a clean look */
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+.skills h2 {
+  font-size: 1.8em;
+  color: #34568B;
+  margin-bottom: 10px;
+}
+
+.skills ul li {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 8px;
+  padding-left: 15px;
 }
 
 /* Projects section styling */
 .projects {
-    background-color: #f9ca24;
-    padding: 25px;
-    border-radius: 10px;
-    margin-top: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  background-color: #FFD700; /* Muted gold for a premium feel */
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensures even distribution of space */
 }
 
 .project {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px; /* Adjust spacing between projects */
-    width: 300px; /* Set a fixed width for uniformity */
-    transition: box-shadow 0.3s ease;
-}
-
-.project:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.project h3 {
-    margin: 0 0 15px;
-    font-size: 1.7em;
-    color: #4b6584;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  width: calc(33% - 20px); /* Three items per row with spacing */
+  transition: box-shadow 0.3s ease;
 }
 
 .project img {
-    width: 100%; /* Ensure image fills the container */
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    object-fit: cover;
+  width: 100%; /* Full width of the container */
+  height: auto;
+  margin-bottom: 10px;
 }
 
-.project p {
-    color: #7f8c8d;
-    margin-top: 10px;
-}
-
-/* Responsive adjustments for different screen sizes */
+/* Adjust responsiveness and refine layout */
 @media (max-width: 768px) {
-    .about-content, .projects, .affinity-diagram, .sketches {
-        flex-direction: column;
-    }
+  .project {
+    width: calc(50% - 20px); /* Two items per row in smaller screens */
+  }
 
-    .project, .sketch {
-        width: 100%; /* Full width on smaller screens */
-    }
+  .about-content, .affinity-diagram, .sketches {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-pic, .affinity-diagram img, .sketch img {
+    width: 80%; /* Larger size for single column layout */
+  }
 }
 
-/* Restrict section width */
-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
 
 
