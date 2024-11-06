@@ -1,158 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Mono+One&display=swap');
-
-/* Basic reset for margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General page styling */
 body {
-  font-family: 'IBM Plex Sans', Arial, sans-serif;
-  background-color: #f4f9f9;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f9f9;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
 }
 
-/* Headers */
 header {
-  text-align: center;
-  padding: 30px;
-  background-color: #34568B;
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    background-color: #4b6584;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  font-size: 2.5em;
-  font-weight: 700;
+    margin: 0;
+    font-size: 2.5em; /* Reduced for better scale */
+    font-weight: 700;
 }
 
 header p {
-  font-size: 1.2em;
-  margin-top: 5px;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 5px;
 }
 
-/* Navigation Bar */
-.navbar-brand {
-  display: flex;
-}
-
-.navbarScroll.navbarDark {
-  background-color: #000;
-}
-
-.nav-link {
-  font-family: 'Caveat', cursive;
-  font-size: 25px;
-}
-
-.nav-item {
-  margin-right: 5%;
-}
-
-.collapse.navbar-collapse {
-  overflow: fit-content;
-}
-
-/* Buttons and Links */
-.buttons-container, .btn-primary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  color: #000;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.btn-primary {
-  padding: 10px 20px;
-  max-width: 300px;
-  margin: 2%;
-}
-
-.btn-primary:hover {
-  background-color: #fff;
-  border-color: #6c5ce7; /* Soft purple */
-}
-
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #95a5a6;
-  font-size: 0.9em;
-}
-
-/* Responsive Images */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-}
-
-/* Section Styles */
-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Specific Section Styles */
-.about, .skills, .projects {
-  margin-top: 30px;
+/* About section styling */
+.about {
+    background-color: #d1d8e0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .about-content {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .profile-pic {
-  width: 120px;
-  margin-right: 20px;
-  border: 3px solid #34568B;
+    width: 120px; /* Adjusted size for better proportion */
+    margin-right: 20px;
+    border: 3px solid #4b6584; /* Styled border to frame the picture */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
+.about h2 {
+    font-size: 1.8em; /* Scaled down for balance */
+    color: #4b6584;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1.1em;
+    color: #34495e;
+}
+
+/* Projects section styling */
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    background-color: #f9ca24;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Improved alignment */
 }
 
 .project {
-  width: calc(33.33% - 20px);
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 30%; /* Adjusted for responsive grid layout */
+    transition: box-shadow 0.3s ease;
 }
 
 .project:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.project h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em; /* Adjusted for hierarchy */
+    color: #4b6584;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .project {
-    width: calc(50% - 20px); /* Adjust for smaller screens */
-  }
-
-  .about-content, .projects {
-    flex-direction: column;
-    align-items: center;
-  }
+    .project {
+        width: 100%; /* Full width for smaller screens */
+    }
 }
 
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #95a5a6;
+    font-size: 0.9em;
+}
+
+/* Ensure images are responsive and adjust their size */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* Restrict section width */
+section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
 
 
 
