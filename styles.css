@@ -93,6 +93,10 @@ nav ul li a:hover {
   border-radius: 5px;
   margin-top: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Add space between projects */
 }
 
 .project {
@@ -100,16 +104,40 @@ nav ul li a:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 15px;
-  margin: 10px;
-  width: 30%;
-  display: inline-block;
-  vertical-align: top;
+  width: 30%; /* Ensure all boxes are the same width */
+  height: 350px; /* Set a fixed height */
+  box-sizing: border-box; /* Include padding and borders in the dimensions */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space out content within the box */
   transition: box-shadow 0.3s ease;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  object-fit: cover; /* Ensure images fit nicely */
 }
 
 .project:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.project h3 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #4b6584;
+}
+
+.project p {
+  color: #7f8c8d;
+  font-size: 0.9em;
+  line-height: 1.4;
+  text-align: justify;
+}
+
 
 /* Contact section styling */
 .contact form {
