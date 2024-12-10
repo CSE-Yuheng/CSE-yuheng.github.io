@@ -87,36 +87,72 @@ nav ul li a:hover {
 }
 
 /* Projects section styling */
+/* Projects section styling */
 .projects {
-    display:flex; 
-    flex-wrap:wrap;  
+    display: flex;
+    flex-wrap: wrap; /* Allow project cards to wrap to the next row */
+    gap: 20px; /* Add consistent spacing between cards */
+    justify-content: center; /* Center all project cards */
+    margin: 20px 0;
 }
+
 .project {
-    width: 30%;
+    flex: 1 1 30%; /* Allow cards to resize dynamically, max width 30% */
+    max-width: 30%; /* Ensure cards do not exceed 30% of the row width */
+    min-width: 250px; /* Set a minimum width to prevent cards from shrinking too much */
+    height: 350px; /* Fixed height for consistent sizing */
     margin: 10px;
-    padding: 20px 10px;
-    background: rgb(114, 2, 2);  /* pick a color */
-    border-radius: 25%;
+    padding: 20px;
+    background: rgb(114, 2, 2); /* Card background color */
+    border-radius: 15px; /* Rounded corners for a clean design */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Evenly distribute content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover animations */
 }
-.project img{
-    width: 300px;
-    /* height: 300px; */
-    margin: 10px;
-    border: 2px solid rgb(126, 14, 201); /* choose a color */
+
+.project:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.project img {
+    width: 100%; /* Images take up the full width of the card */
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
+    border-radius: 10px; /* Rounded corners for the image */
+    border: 2px solid rgb(126, 14, 201); /* Border color for the image */
     display: block;
     margin: auto;
 }
 
-a {  /* change the appearance of ALL links */
-    text-decoration: none;
+.project h3 {
     text-align: center;
     color: bisque;
+    font-size: 1.2em;
+    margin: 10px 0;
 }
-.project p {  /* change the appearance of paragraph tags inside .project divs */
+
+.project p {
     text-align: center;
-    margin: 15px;
     color: whitesmoke;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 10px 0;
 }
+
+.project a {
+    text-align: center;
+    color: bisque;
+    text-decoration: none;
+}
+
+.project a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 
 
 /* Contact section styling */
