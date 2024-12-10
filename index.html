@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>CSCE 190: Yuheng Zhu Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <header>
@@ -13,55 +14,66 @@
       <p>Welcome to my portfolio!</p>
     </header>
 
-   <section class="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-        <img src="images/chikawa.png" alt="Yuheng Zhu" class="profile-pic"/>
-        <p>
-            Hi, I'm Yuheng Zhu, a passionate student at UofSC. I'm
-            currently pursuing a degree in CIS. I enjoy coding, learning
-            about new technologies, and building cool projects. I'm always eager to
-            tackle new challenges and grow as a developer.
-        </p>
-    </div>
-</section>
-
     <nav>
-    <ul>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#affinity-diagram">Affinity Diagram</a></li>
+        <li><a href="#paper-prototypes">Paper Prototypes</a></li>
         <li><a href="resume.html">Resume</a></li>
-        <li><a href="index.html">Home</a></li>
-    </ul>
-</nav>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+    </nav>
 
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="images/chikawa.png" alt="Yuheng Zhu" class="profile-pic" />
+        <p>
+          Hi, I'm Yuheng Zhu, a passionate student at UofSC. I'm currently
+          pursuing a degree in CIS. I enjoy coding, learning about new
+          technologies, and building cool projects. I'm always eager to tackle
+          new challenges and grow as a developer.
+        </p>
+      </div>
+    </section>
 
-
-    <section class="skills">
+    <section id="skills" class="skills">
       <h2>Skills</h2>
       <ul>
-        <li>HTML & CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>Git & GitHub</li>
-        <li>Problem-solving</li>
+        <li><i class="fas fa-code"></i> HTML & CSS</li>
+        <li><i class="fas fa-laptop-code"></i> JavaScript</li>
+        <li><i class="fas fa-python"></i> Python</li>
+        <li><i class="fas fa-git-alt"></i> Git & GitHub</li>
+        <li><i class="fas fa-lightbulb"></i> Problem-solving</li>
       </ul>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
       <h2>Highlighted Projects</h2>
-
       <section class="project">
         <a href="files/Problem%20Statement%20(1).pdf">
           <h3>Problem Statement</h3>
         </a>
-        <a href="files/Problem%20Statement%20(1).pdf"> 
+        <a href="files/Problem%20Statement%20(1).pdf">
           <img src="images/problemstatement.png" alt="Problem Statement Image" />
         </a>
-        <p>None.</p>
+        <p>Created a concise and clear document outlining the core problem and proposed solutions for a project.</p>
+      </section>
+
+      <section class="project">
+        <a href="files/Combined_Sketches.pdf">
+          <h3>Combined Sketches</h3>
+        </a>
+        <a href="files/Combined_Sketches.pdf">
+          <img src="images/Firstsketch.png" alt="Combined Sketches Preview" />
+        </a>
+        <p>Visualized the app’s user interface with creative sketches and layouts using Canva.</p>
       </section>
     </section>
 
-    <!-- Separate Affinity Diagram Section -->
-    <section class="affinity-diagram">
+    <section id="affinity-diagram" class="affinity-diagram">
       <h2>Affinity Diagram</h2>
       <a href="files/Your paragraph text.pdf">
         <h3>View Affinity Diagram (PDF)</h3>
@@ -69,42 +81,31 @@
       <a href="files/Your paragraph text.pdf">
         <img src="images/Your paragraph text.png" alt="Affinity Diagram Image" />
       </a>
-      <p>Visual representation of organizing ideas and solutions.</p>
+      <p>A visual representation of organizing ideas and solutions into meaningful categories.</p>
     </section>
 
-    <!-- Sketches Section -->
-    <section class="sketches">
-      <h2>Sketches</h2>
-
-      <!-- Combined Sketches PDF -->
-      <section class="sketch">
-        <a href="files/Combined_Sketches.pdf">
-          <h3>Combined Sketches </h3>
-        </a>
-        <a href="files/Combined_Sketches.pdf">
-          <img src="images/Firstsketch.png" alt="Combined Sketches Preview" />
-        </a>
-        <p>This resource is from Canva.It introduce the function of App.</p>
-      </section>
-    </section>
-
-    <!-- New Paper Prototypes Section -->
-  <section class="paper-prototypes">
-    <h2>Paper Prototypes</h2>
-   
-    <a href="files/hand.pdf">
+    <section id="paper-prototypes" class="paper-prototypes">
+      <h2>Paper Prototypes</h2>
+      <a href="files/hand.pdf">
         <h3>Hand-Drawn Paper Prototype</h3>
-    </a>
-    <a href="files/hand.pdf">
+      </a>
+      <a href="files/hand.pdf">
         <img src="images/one.jpeg" alt="Hand-Drawn Paper Prototype Image" />
-    </a>
-    <p>Paper prototypes for visualizing user interfaces.</p>
-</section>
+      </a>
+      <p>Early-stage sketches of the user interface for visualizing user interactions.</p>
+    </section>
 
-
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2>Contact Me</h2>
-      <p>Email: yuheng@email.sc.edu</p>
+      <form action="mailto:yuheng@email.sc.edu" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
     </section>
 
     <footer>
@@ -112,6 +113,7 @@
     </footer>
   </body>
 </html>
+
 
 
 
