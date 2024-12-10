@@ -61,6 +61,30 @@ header p {
     color: #34495e;
 }
 
+.resume h3 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.resume ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resume ul li {
+    margin-bottom: 10px;
+}
+
+.about-content img {
+    border-radius: 50%;
+    max-width: 150px;
+}
+
+.contact {
+    text-align: center;
+}
+
+
 /* Projects section styling */
 .projects {
     background-color: #f9ca24;
