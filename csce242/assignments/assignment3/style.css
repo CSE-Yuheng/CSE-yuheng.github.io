@@ -1,0 +1,169 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdfbe7; /* light cream background */
+  color: #5e7b7a;            /* muted text color */
+  line-height: 1.5;
+}
+
+/* -----------------------------
+   HEADER
+----------------------------- */
+header {
+  background-color: #f2f2d0;
+  padding: 1em;
+  text-align: center;
+  border-bottom: 2px solid #c7c7ab;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #5e7b7a;
+}
+
+/* -----------------------------
+   NAVIGATION
+   - Vertical on default (mobile-first)
+   - Horizontal at larger screens
+----------------------------- */
+nav {
+  background-color: #db8b8b;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+nav li {
+  border-bottom: 1px solid #e7a0a0;
+}
+
+nav li:last-child {
+  border: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.75em;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav a:hover {
+  background-color: #c16d6d;
+}
+
+/* -----------------------------
+   MAIN LAYOUT
+   - We'll use flex to place
+     aside either to the right
+     or left, depending on design
+----------------------------- */
+main {
+  display: flex;
+  flex-direction: column; /* stack columns by default (mobile) */
+  gap: 1em;
+  padding: 1em;
+}
+
+/* Big Ideas Section */
+.big-ideas {
+  background-color: #fdfbe7;
+}
+
+/* Idea blocks to show distinct background */
+.idea-block {
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.teal-block {
+  background-color: #759190; /* teal-ish block */
+  color: #fdfbe7;            /* light text */
+}
+
+.idea-block img {
+  display: block;
+  margin: 1em auto; /* center images */
+}
+
+/* Titles Section */
+.titles-section {
+  background-color: #9cb9b8;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.title-block {
+  margin-bottom: 1em;
+  background-color: #fdfbe7; /* a light background for contrast */
+  padding: 1em;
+  border-radius: 4px;
+}
+
+/* ASIDE - extra content/links */
+aside {
+  background-color: #759190;
+  color: #fdfbe7;
+  padding: 1em;
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1em;
+  background-color: #f2f2d0;
+  border-top: 2px solid #c7c7ab;
+}
+
+/* -----------------------------
+   MEDIA QUERY
+   - For larger screens, lay out 
+     main sections side-by-side 
+     and make nav horizontal
+----------------------------- */
+@media (min-width: 800px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+  nav li {
+    border-bottom: none;
+    border-right: 1px solid #e7a0a0;
+  }
+  nav li:last-child {
+    border-right: none;
+  }
+
+  /* main: columns side by side */
+  main {
+    flex-direction: row;
+  }
+
+  .big-ideas {
+    flex: 2;
+    margin-right: 1em;
+  }
+
+  .titles-section {
+    flex: 2;
+    margin-right: 1em;
+  }
+
+  aside {
+    flex: 1;
+    margin-right: 0;
+  }
+}
