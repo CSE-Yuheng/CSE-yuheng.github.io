@@ -1,156 +1,195 @@
-/* -----------------------------
-   1. BASIC RESET & GLOBAL STYLES
------------------------------ */
+/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fdfbe7; /* Cream background */
-  color: #5e7b7a;            /* Muted teal-ish text */
-  line-height: 1.5;
-}
 
-/* Centered Container with a border to match screenshot */
-.page-container {
-  max-width: 900px;
+/* Overall Page Wrapper */
+.page-wrapper {
+  max-width: 1200px;
   margin: 0 auto;
-  border: 1px solid #ccc; /* faint border */
-  padding: 0;
+  background-color: #fdfbe7; /* cream */
+  border: 1px solid #ccc; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* -----------------------------
-   2. HEADER
------------------------------ */
+/* 1. HEADER / TOP NAV */
+
 header {
-  text-align: center;
-  padding: 1em;
-  background-color: #fdfbe7; /* same as body, just a bit of spacing */
-  border-bottom: 2px solid #c7c7ab; /* optional faint bottom line */
-}
-header h1 {
-  font-size: 2rem;
-  color: #759190; /* Teal color for heading text */
+  background-color: #fdfbe7;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1em;
 }
 
-/* -----------------------------
-   3. NAVIGATION (VERTICAL LIST)
------------------------------ */
-nav {
-  background-color: #db8b8b; /* Pink background */
-}
-nav ul {
+/* Horizontal Pink Nav with evenly spaced links */
+.top-nav ul {
   list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: #db8b8b;
 }
-nav li {
-  border-bottom: 1px solid #e7a0a0; 
+.top-nav li {
+  border-right: 1px solid #e7a0a0;
+  flex: 1;
+  text-align: center;
 }
-nav li:last-child {
-  border-bottom: none;
+.top-nav li:last-child {
+  border-right: none;
 }
-nav a {
+.top-nav a {
   display: block;
   padding: 0.75em;
   text-decoration: none;
-  color: #fff; /* White text on pink */
+  color: #fff;
   font-weight: bold;
-  transition: background-color 0.2s ease;
 }
-nav a:hover {
-  background-color: #c16d6d; /* Darker pink on hover */
-}
-
-/* -----------------------------
-   4. MAIN LAYOUT
------------------------------ */
-main {
-  display: flex;           
-  flex-direction: column;  /* stacked sections in a single column */
-  gap: 1em;
-  padding: 1em;
+header h1 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 2rem;
+  color: #759190; /* teal text */
 }
 
-/* Big Ideas Section */
+/* 2. BIG IDEAS SECTION */
 .big-ideas {
-  background-color: #fdfbe7; /* match the overall cream */
   padding: 1em;
+  border-bottom: 1px solid #ccc;
 }
 .big-ideas h2 {
-  color: #759190; /* Teal color */
+  font-size: 1.8rem;
+  color: #759190;
+  margin-bottom: 1em;
+}
+
+/* Idea Containers - flex row: text + image side by side */
+.idea-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+  padding: 1em;
+  color: #fdfbe7; /* default text is white-ish for teal/pink blocks */
+}
+.idea-text {
+  flex: 3;
+  margin-right: 1em;
+}
+.idea-text h3 {
+  margin-bottom: 0.5em;
+  color: #fdfbe7;
+}
+.idea-text p {
+  line-height: 1.5;
+}
+.idea-image {
+  flex: 1;
+  text-align: right;
+}
+.idea-image img {
+  max-width: 100%;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Colors for idea blocks */
+.teal-bg {
+  background-color: #759190;
+}
+.pink-bg {
+  background-color: #db8b8b;
+}
+/* Reverse the flex direction for Idea 2 (image on left) */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 3. LARGE TEAL STRIP (Titles + Links + Titles) */
+.large-teal-strip {
+  background-color: #9cb9b8; /* lighter teal */
+  display: flex;
+  padding: 1em;
+}
+
+/* Left column: Titles 1-4 (pink images) */
+.left-column {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap; /* 2x2 grid for Title 1-4 */
+}
+.title-block {
+  width: 50%; /* 2 columns */
+  padding: 1em;
+  box-sizing: border-box;
+}
+.title-block h3 {
+  color: #fdfbe7;
   margin-bottom: 0.5em;
 }
-
-/* Idea blocks (Teal background + white text) */
-.idea-block {
-  margin: 1em 0;
-  padding: 1em;
+.title-block p {
+  color: #fdfbe7;
+  line-height: 1.4;
 }
-.teal-block {
-  background-color: #759190;
+
+/* Middle column: Pink Links block */
+.middle-column {
+  flex: 1;
+  margin: 0 1em;
+  padding: 1em;
+  color: #fdfbe7;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.middle-column h3 {
+  margin-bottom: 0.5em;
   color: #fdfbe7;
 }
-
-/* Titles Section (Large teal area) */
-.titles-section {
-  background-color: #9cb9b8; /* a lighter teal block */
-  padding: 1em;
-  margin: 1em 0;
-}
-.titles-section h3 {
-  color: #fdfbe7; /* white text on teal */
-  margin-top: 1em;
-}
-.titles-section img {
-  display: block;
-  margin: 1em 0;
-}
-
-/* Aside (Teal background, with pink sub-block inside) */
-aside {
-  background-color: #759190; /* teal */
-  color: #fdfbe7;
-  padding: 1em;
-  margin: 1em 0;
-}
-aside h3 {
-  margin: 0.5em 0;
-}
-
-/* Pink block inside aside for "Links" */
-.pink-block {
-  background-color: #db8b8b;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-radius: 4px;
-}
-.pink-block ul {
+.middle-column ul {
   list-style: none;
 }
-.pink-block li {
-  margin: 0.25em 0;
+.middle-column li {
+  margin: 0.5em 0;
 }
-.pink-block a {
-  color: #fdfbe7; 
+.middle-column a {
   text-decoration: none;
+  color: #fdfbe7;
 }
-.pink-block a:hover {
+.middle-column a:hover {
   text-decoration: underline;
 }
 
-/* Adjusting images in aside */
-aside img {
-  display: block;
-  margin: 1em 0;
+/* Right column: Titles 1-6 (pink 200x50 images) */
+.right-column {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+.mini-title-block {
+  width: 50%; /* 2 columns across */
+  padding: 1em;
+  box-sizing: border-box;
+}
+.mini-title-block h3 {
+  color: #fdfbe7;
+  margin-bottom: 0.5em;
+}
+.mini-title-block p {
+  color: #fdfbe7;
+  line-height: 1.4;
 }
 
-/* -----------------------------
-   5. FOOTER
------------------------------ */
+/* 4. FOOTER */
 footer {
   text-align: center;
   padding: 1em;
+  margin-top: auto; /* push footer to bottom */
+  border-top: 1px solid #ccc;
   background-color: #fdfbe7;
-  border-top: 2px solid #c7c7ab;
 }
+footer p {
+  color: #5e7b7a; 
+  font-style: italic;
+}
+
