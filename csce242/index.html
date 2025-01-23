@@ -2,57 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portal - CSCE 242-001</title>
+  <title>CSCE 242 Portal - Yuheng Zhu</title>
 
-  <!-- Inline CSS for demonstration; alternatively, place in a separate .css file -->
+  <!-- 1) Import a Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    /* 1) Set a more appealing default font */
-    body {
+    /* Global Reset/Defaults */
+    * {
       margin: 0;
       padding: 0;
-      font-family: "Arial", "Helvetica", sans-serif;
-      /* 5) Add a background color or an image */
-      /* Example background color: light gray */
-      background-color: #f4f4f4;
-      color: #333; /* Default text color */
+      box-sizing: border-box;
     }
 
-    /* 4) Create a formatted div with an ID to nicely contain all content */
+    body {
+      font-family: "Open Sans", sans-serif;  /* Google Font */
+      color: #333;                           /* Default text color */
+      background-color: #f2f2f2;             /* Subtle page background */
+    }
+
+    /* Hero Section */
+    #hero {
+      /* A nice full-width background image with overlay */
+      background: 
+        linear-gradient(
+          rgba(0, 0, 0, 0.3), 
+          rgba(0, 0, 0, 0.3)
+        ), 
+        url("https://picsum.photos/id/180/1920/1080");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;              /* Text color for hero */
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Main Container */
     #main-content {
-      max-width: 900px; 
-      margin: 40px auto;
-      background-color: #ffffff; 
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 900px;       /* Centered main container */
+      margin: -40px auto 50px; 
+      background-color: #fff;  /* White card background */
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* 7) Remove underline on links & 8) Recolor links to not be default blue */
+    /* Section Headings */
+    h2 {
+      color: #333;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    /* Paragraphs */
+    p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Remove bullet points in the assignment list */
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    /* Link Styles */
     a {
-      text-decoration: none;      /* removes underline */
-      color: #007BFF;            /* choose a custom link color */
+      text-decoration: none;        /* No underline */
+      color: #007BFF;              /* Primary link color */
+      transition: color 0.2s ease; /* Smooth hover transition */
     }
 
-    /* When hovering, we can slightly underline for clarity */
     a:hover {
+      color: #0056b3; /* Darker shade on hover */
       text-decoration: underline;
     }
 
-    h1, h2 {
-      color: #333; /* Make headings stand out but still match overall theme */
-    }
+    /* Responsive Hero Text Sizing */
+    @media (max-width: 600px) {
+      #hero h1 {
+        font-size: 1.8rem;
+      }
 
-    p, li {
-      line-height: 1.5;
+      #hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- 4) Formatted div wrapper for your page content -->
+  <!-- Hero Section -->
+  <section id="hero">
+    <h1>CSCE 240-002: Introduction to Programming</h1>
+    <p>Welcome to the course portal. Explore assignments, guidelines, and resources on this page!</p>
+  </section>
+
+  <!-- Main Content -->
   <div id="main-content">
-    <h1>CSCE 242-002: Introduction to Programming</h1>
+    <h2>About the Course</h2>
     <p><strong>Student Name:</strong> Yuheng Zhu</p>
     <p>
       This course introduces fundamental programming concepts, covering topics
@@ -63,9 +136,10 @@
     <h2>Assignments</h2>
     <ul>
       <li><a href="assignments/assignment1/index.html">Assignment 1</a></li>
-      <!-- 1) Include a link to Assignment 2 -->
       <li><a href="assignments/assignment2/index.html">Assignment 2</a></li>
+    
     </ul>
   </div>
 </body>
 </html>
+
