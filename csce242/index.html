@@ -1,146 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>CSCE 242 Portal - Yuheng Zhu</title>
-
-  <!-- 1) Import a Google Font -->
+  <meta charset="UTF-8">
+  <title>CSCE 242 Portal</title>
+  <!-- Google Fonts Example -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" 
     rel="stylesheet"
-  />
-
+  >
   <style>
-    /* Global Reset/Defaults */
+    /* 1. GLOBAL RESETS */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
-      font-family: "Open Sans", sans-serif;  /* Google Font */
-      color: #333;                           /* Default text color */
-      background-color: #f2f2f2;             /* Subtle page background */
+      font-family: "Open Sans", sans-serif;
+      background-color: #f9f9f9; 
+      color: #333;
+      padding: 1rem;
     }
 
-    /* Hero Section */
-    #hero {
-      /* A nice full-width background image with overlay */
-      background: 
-        linear-gradient(
-          rgba(0, 0, 0, 0.3), 
-          rgba(0, 0, 0, 0.3)
-        ), 
-        url("https://picsum.photos/id/180/1920/1080");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;              /* Text color for hero */
-      padding: 60px 20px;
+    /* 2. HEADER */
+    header {
+      text-align: left;  /* or left/center as desired */
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    header .course-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    header .subtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #222;
+      margin-bottom: 2rem;
+    }
+
+    /* 3. MAIN WRAPPER */
+    .assignments-container {
+      max-width: 1200px;  /* center in wide screens */
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;  /* distribute cards horizontally */
+      gap: 1.5rem;
+      padding: 0 1rem;
+      flex-wrap: wrap;  /* allows wrapping if viewport is narrow */
+    }
+
+    /* 4. INDIVIDUAL ASSIGNMENT CARDS */
+    .assignment-card {
+      background-color: #e6eefc; /* Light blue background from screenshot */
+      border-radius: 4px;
+      width: 300px;        /* fixed width for consistent columns on large screens */
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* center the image & heading & text */
       text-align: center;
     }
-
-    #hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    .assignment-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .assignment-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;   /* optional border to mimic placeholder frame */
+    }
+    .assignment-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
     }
 
-    #hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    /* Main Container */
-    #main-content {
-      max-width: 900px;       /* Centered main container */
-      margin: -40px auto 50px; 
-      background-color: #fff;  /* White card background */
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Section Headings */
-    h2 {
-      color: #333;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-
-    /* Paragraphs */
-    p {
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    /* Remove bullet points in the assignment list */
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      margin: 8px 0;
-    }
-
-    /* Link Styles */
-    a {
-      text-decoration: none;        /* No underline */
-      color: #007BFF;              /* Primary link color */
-      transition: color 0.2s ease; /* Smooth hover transition */
-    }
-
-    a:hover {
-      color: #0056b3; /* Darker shade on hover */
-      text-decoration: underline;
-    }
-
-    /* Responsive Hero Text Sizing */
+    /* 5. MEDIA QUERY FOR SMALLER SCREENS */
     @media (max-width: 600px) {
-      #hero h1 {
-        font-size: 1.8rem;
+      .assignments-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 2rem;
       }
+      .assignment-card {
+        width: 90%;  /* almost full width for mobile */
+        text-align: center;
+      }
+    }
 
-      #hero p {
-        font-size: 1rem;
-      }
+    /* 6. FOOTER (Optional) */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #666;
     }
   </style>
 </head>
-
 <body>
-  <!-- Hero Section -->
-  <section id="hero">
-    <h1>CSCE 242-001: Introduction to Programming</h1>
-    <p>Welcome to the course portal. Explore assignments, guidelines, and resources on this page!</p>
-  </section>
 
-  <!-- Main Content -->
-  <div id="main-content">
-    <h2>About the Course</h2>
-    <p><strong>Student Name:</strong> Yuheng Zhu</p>
-    <p>
-      This course introduces fundamental programming concepts, covering topics
-      like algorithms, data structures, and software design. Students will
-      gain hands-on experience with coding in C++ and solving real-world problems.
-    </p>
+  <!-- Header / Page Title -->
+  <header>
+    <h1>Portia Plante</h1>
+    <div class="course-title">CSCE 242: Client-Server Computing</div>
+    <div class="subtitle">Assignments</div>
+  </header>
 
-    <h2>Assignments</h2>
-    <ul>
-      <li><a href="assignments/assignment1/index.html">Assignment 1</a></li>
-      <li><a href="assignments/assignment2/index.html">Assignment 2</a></li>
-      <li><a href="assignments/assignment3/index.html">Assignment 3</a></li>
-    
-    </ul>
-  </div>
+  <!-- Main content area - assignment cards -->
+  <main>
+    <section class="assignments-container">
+      <!-- Card 1 -->
+      <div class="assignment-card">
+        <h2>Assignment 1 – Basic HTML</h2>
+        <!-- Replace src with your real screenshot or placeholder, same size for each -->
+        <img 
+          src="https://via.placeholder.com/300x150.png?text=300+x+150" 
+          alt="Assignment 1 Screenshot" 
+        />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Mauris luctus lacus augue. Duis sed tincidunt sapien.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="assignment-card">
+        <h2>Assignment 2 – Basic CSS</h2>
+        <img 
+          src="https://via.placeholder.com/300x150.png?text=300+x+150" 
+          alt="Assignment 2 Screenshot" 
+        />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Mauris luctus lacus augue. Duis sed tincidunt sapien.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="assignment-card">
+        <h2>Assignment 3 – Page Layout</h2>
+        <img 
+          src="https://via.placeholder.com/300x150.png?text=300+x+150" 
+          alt="Assignment 3 Screenshot" 
+        />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Mauris luctus lacus augue. Duis sed tincidunt sapien.
+        </p>
+      </div>
+    </section>
+  </main>
+
+
+
 </body>
 </html>
+
 
