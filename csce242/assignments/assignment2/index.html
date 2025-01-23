@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 2 - Firearms 101</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", sans-serif;
+      /* Background image */
+      background: url("https://picsum.photos/id/1025/1920/1080") no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    
+    #main-content {
+      max-width: 900px; 
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Navigation Styles */
+    nav {
+      display: flex;
+      gap: 10px;
+      background-color: #2c3e50;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-bottom: 1.5em;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #34495e;
+    }
+
+    /* Headings */
+    h1 {
+      margin-bottom: 0.5em;
+      color: #2c3e50;
+    }
+
+    h2 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      color: #2c3e50;
+    }
+
+    /* Paragraphs */
+    p {
+      line-height: 1.6;
+      margin-bottom: 1em;
+    }
+
+    /* ------------------------------
+       Class-based CSS Rule Example
+       (Used for images to add borders, padding, etc.)
+       ------------------------------ */
+    .image-frame {
+      border: 2px solid #ccc;
+      padding: 6px;
+      border-radius: 4px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 1em;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      background-color: #ecf0f1; /* Light background for the table area */
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #bdc3c7;
+      text-align: left;
+    }
+    th {
+      background-color: #2c3e50;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Main Container -->
+  <div id="main-content">
+    <!-- Navigation -->
+    <nav>
+      <a href="index.html">Home</a>      <!-- links to this page -->
+      <a href="#">About</a>
+      <a href="#">Pictures</a>
+      <a href="#">Contact Us</a>
+    </nav>
+
+    <!-- Title & Subheader -->
+    <h1>Firearms 101</h1>
+    <h2>A Brief Overview</h2>
+
+    <!-- Paragraphs -->
+    <p>
+      Firearms have been an integral part of history and culture for centuries, 
+      evolving from rudimentary handheld cannons to modern, highly specialized 
+      equipment. Understanding the mechanics, safe handling, and legal 
+      considerations is crucial for anyone interested in this topic. 
+    </p>
+    <p>
+      This page offers a quick look at some popular firearm categories, basic 
+      safety guidelines, and a brief overview of how certain models differ 
+      in design and purpose. Whether you’re a history buff or a target-shooting 
+      enthusiast, the world of firearms encompasses a wide range of areas 
+      worth exploring.
+    </p>
+
+    <!-- Images (Placeholder) -->
+    <img 
+      src="https://picsum.photos/id/225/600/400" 
+      alt="Firearm Example 1" 
+      class="image-frame"
+    />
+    <img 
+      src="https://picsum.photos/id/217/600/400" 
+      alt="Firearm Example 2" 
+      class="image-frame"
+    />
+
+    <!-- Table (3 columns, 5 rows) -->
+    <h2>Sample Firearm Table</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Caliber</th>
+      </tr>
+      <tr>
+        <td>Glock 19</td>
+        <td>Semi-Automatic Pistol</td>
+        <td>9×19mm</td>
+      </tr>
+      <tr>
+        <td>AR-15</td>
+        <td>Semi-Automatic Rifle</td>
+        <td>.223 / 5.56</td>
+      </tr>
+      <tr>
+        <td>Remington 870</td>
+        <td>Pump-Action Shotgun</td>
+        <td>12 Gauge</td>
+      </tr>
+      <tr>
+        <td>AK-47</td>
+        <td>Semi-Automatic Rifle</td>
+        <td>7.62×39mm</td>
+      </tr>
+      <tr>
+        <td>Ruger 10/22</td>
+        <td>Semi-Automatic Rifle</td>
+        <td>.22 LR</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
 
