@@ -6,142 +6,141 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Page Wrapper with a subtle border and cream background -->
-  <div class="page-wrapper">
-    <!-- Header + Pink Nav -->
-    <header>
-      <!-- Horizontal Pink Nav with 6 items -->
-      <nav class="top-nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Store</a></li>
-          <li><a href="#">Staff</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </nav>
 
-      <!-- Centered Title -->
-      <h1>Layout with Flex</h1>
-    </header>
+  <!-- Top navigation + header -->
+  <header>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">Staff</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <h1>Layout with Flex</h1>
+  </header>
 
-    <!-- Big Ideas Section (Cream Background) -->
-    <section class="big-ideas">
-      <h2>Big Ideas!</h2>
+  <!-- Main content area -->
+  <main>
+    <h2 class="big-ideas">Big Ideas!</h2>
 
-      <!-- Idea 1 (Teal) -->
-      <div class="idea-block teal-bg">
-        <div class="idea-text">
-          <h3>Idea 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-            laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </div>
-        <div class="idea-img">
-          <!-- Teal 200x200 -->
-          <img 
-            src="https://fakeimg.pl/200x200/9cb9b8/fdfbe7?text=200%20x%20200" 
-            alt="Teal 200 x 200"
-          />
-        </div>
+    <!-- Idea 1 -->
+    <section class="idea idea-one">
+      <div class="content">
+        <h3>Idea 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
       </div>
+      <!-- 200x200 teal placeholder image -->
+      <img 
+        class="image-box"
+        src="https://fakeimg.pl/200x200/9cb9b8/ffffff?text=200%20x%20200"
+        alt="200x200 placeholder"
+      />
+    </section>
 
-      <!-- Idea 2 (Pink) -->
-      <div class="idea-block pink-bg reverse-row">
-        <div class="idea-img">
-          <!-- Teal 200x200 inside pink block -->
-          <img 
-            src="https://fakeimg.pl/200x200/759190/fdfbe7?text=200%20x%20200" 
-            alt="Pink 200 x 200"
-          />
-        </div>
-        <div class="idea-text">
-          <h3>Idea 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-            laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </div>
-      </div>
-
-      <!-- Idea 3 (Teal) -->
-      <div class="idea-block teal-bg">
-        <div class="idea-text">
-          <h3>Idea 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div class="idea-img">
-          <!-- Teal 200x200 -->
-          <img 
-            src="https://fakeimg.pl/200x200/9cb9b8/fdfbe7?text=200%20x%20200" 
-            alt="Teal 200 x 200"
-          />
-        </div>
+    <!-- Idea 2 -->
+    <section class="idea idea-two">
+      <!-- 200x200 teal placeholder image (or you could use pink if you prefer) -->
+      <img 
+        class="image-box"
+        src="https://fakeimg.pl/200x200/9cb9b8/ffffff?text=200%20x%20200"
+        alt="200x200 placeholder"
+      />
+      <div class="content">
+        <h3>Idea 2</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
       </div>
     </section>
 
-    <!-- Large Teal Strip -->
-    <section class="large-teal-strip">
-      <!-- Left Column: Titles 1-4 (Pink 200x100) -->
-      <div class="left-col">
-        <article class="title-item">
-          <h3>Title 1</h3>
+    <!-- Idea 3 -->
+    <section class="idea idea-three">
+      <div class="content">
+        <h3>Idea 3</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </p>
+      </div>
+      <!-- 200x200 teal placeholder image -->
+      <img 
+        class="image-box"
+        src="https://fakeimg.pl/200x200/9cb9b8/ffffff?text=200%20x%20200"
+        alt="200x200 placeholder"
+      />
+    </section>
+
+    <!-- Lower (title) sections -->
+    <section class="bottom-section">
+      <!-- Left columns -->
+      <div class="left-titles">
+        <div class="title-block">
+          <h4>Title 1</h4>
+          <!-- 200x100 pink placeholder -->
           <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
+            class="rect-img"
+            src="https://fakeimg.pl/200x100/f28f8f/ffffff?text=200%20x%20100"
+            alt="200x100 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="title-item">
-          <h3>Title 2</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 2</h4>
           <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
+            class="rect-img"
+            src="https://fakeimg.pl/200x100/f28f8f/ffffff?text=200%20x%20100"
+            alt="200x100 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="title-item">
-          <h3>Title 3</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 3</h4>
           <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
+            class="rect-img"
+            src="https://fakeimg.pl/200x100/f28f8f/ffffff?text=200%20x%20100"
+            alt="200x100 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="title-item">
-          <h3>Title 4</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 4</h4>
           <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
+            class="rect-img"
+            src="https://fakeimg.pl/200x100/f28f8f/ffffff?text=200%20x%20100"
+            alt="200x100 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
+        </div>
       </div>
 
-      <!-- Middle Pink Column: Links -->
-      <div class="middle-col pink-bg">
-        <h3>Links</h3>
+      <!-- Middle “Links” panel -->
+      <div class="middle-links">
+        <h4>Links</h4>
         <ul>
           <li><a href="#">Item 1</a></li>
           <li><a href="#">Item 2</a></li>
@@ -150,84 +149,93 @@
         </ul>
       </div>
 
-      <!-- Right Column: Titles 1-6 (Pink 200x50) -->
-      <div class="right-col">
-        <article class="mini-title">
-          <h3>Title 1</h3>
+      <!-- Right columns -->
+      <div class="right-titles">
+        <div class="title-block">
+          <h4>Title 1</h4>
+          <!-- 200x50 pink placeholder -->
           <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
+            class="small-rect"
+            src="https://fakeimg.pl/200x50/f28f8f/ffffff?text=200%20x%2050"
+            alt="200x50 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 2</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 2</h4>
           <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
+            class="small-rect"
+            src="https://fakeimg.pl/200x50/f28f8f/ffffff?text=200%20x%2050"
+            alt="200x50 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 3</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 3</h4>
           <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
+            class="small-rect"
+            src="https://fakeimg.pl/200x50/f28f8f/ffffff?text=200%20x%2050"
+            alt="200x50 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 4</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 4</h4>
           <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
+            class="small-rect"
+            src="https://fakeimg.pl/200x50/f28f8f/ffffff?text=200%20x%2050"
+            alt="200x50 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 5</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 5</h4>
           <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
+            class="small-rect"
+            src="https://fakeimg.pl/200x50/f28f8f/ffffff?text=200%20x%2050"
+            alt="200x50 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 6</h3>
+        </div>
+        <div class="title-block">
+          <h4>Title 6</h4>
           <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
+            class="small-rect"
+            src="https://fakeimg.pl/200x50/f28f8f/ffffff?text=200%20x%2050"
+            alt="200x50 placeholder"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
           </p>
-        </article>
+        </div>
       </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-      <p>@portiaplante.com</p>
-    </footer>
-  </div>
+  <!-- Footer -->
+  <footer>
+    <p>@portiaplante.com</p>
+  </footer>
+
 </body>
 </html>
+
 
 
 
