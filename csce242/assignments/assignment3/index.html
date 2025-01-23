@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="page-wrapper">
-    <!-- Top Bar (Header + Horizontal Pink Nav) -->
+    <!-- 1. HEADER SECTION (Pink Nav + Title Centered) -->
     <header>
       <nav class="top-nav">
         <ul>
@@ -22,12 +22,12 @@
       <h1>Layout with Flex</h1>
     </header>
 
-    <!-- Big Ideas Section -->
+    <!-- 2. BIG IDEAS SECTION (Cream background) -->
     <section class="big-ideas">
       <h2>Big Ideas!</h2>
 
-      <!-- Idea 1 -->
-      <div class="idea-container teal-bg">
+      <!-- Idea 1 (Teal) -->
+      <div class="idea-block teal-bg">
         <div class="idea-text">
           <h3>Idea 1</h3>
           <p>
@@ -37,7 +37,8 @@
             laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
-        <div class="idea-image">
+        <!-- Right image -->
+        <div class="idea-img">
           <img 
             src="https://fakeimg.pl/200x200/9cb9b8/fdfbe7?text=200%20x%20200" 
             alt="Teal 200 x 200"
@@ -46,8 +47,9 @@
       </div>
 
       <!-- Idea 2 (Pink) -->
-      <div class="idea-container pink-bg reverse">
-        <div class="idea-image">
+      <div class="idea-block pink-bg reverse-row">
+        <!-- Left image -->
+        <div class="idea-img">
           <img 
             src="https://fakeimg.pl/200x200/759190/fdfbe7?text=200%20x%20200" 
             alt="Pink 200 x 200"
@@ -65,7 +67,7 @@
       </div>
 
       <!-- Idea 3 (Teal) -->
-      <div class="idea-container teal-bg">
+      <div class="idea-block teal-bg">
         <div class="idea-text">
           <h3>Idea 3</h3>
           <p>
@@ -73,7 +75,8 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div class="idea-image">
+        <!-- Right image -->
+        <div class="idea-img">
           <img 
             src="https://fakeimg.pl/200x200/9cb9b8/fdfbe7?text=200%20x%20200" 
             alt="Teal 200 x 200"
@@ -82,11 +85,11 @@
       </div>
     </section>
 
-    <!-- Large Teal Section -->
+    <!-- 3. LARGE TEAL STRIP (Titles + Links + Titles) -->
     <section class="large-teal-strip">
-      <!-- Left Column: Titles 1-4 with pink 200x100 images -->
-      <div class="left-column">
-        <div class="title-block">
+      <!-- LEFT SUB-SECTION: Title 1..4 (Pink 200x100 images) -->
+      <div class="left-titles">
+        <div class="title-item">
           <h3>Title 1</h3>
           <img 
             src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
@@ -97,7 +100,7 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div class="title-block">
+        <div class="title-item">
           <h3>Title 2</h3>
           <img 
             src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
@@ -108,7 +111,7 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div class="title-block">
+        <div class="title-item">
           <h3>Title 3</h3>
           <img 
             src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
@@ -119,7 +122,7 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div class="title-block">
+        <div class="title-item">
           <h3>Title 4</h3>
           <img 
             src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
@@ -132,8 +135,8 @@
         </div>
       </div>
 
-      <!-- Middle Column: Pink Links box -->
-      <div class="middle-column pink-bg">
+      <!-- MIDDLE SUB-SECTION: Pink Links Box -->
+      <div class="middle-links pink-bg">
         <h3>Links</h3>
         <ul>
           <li><a href="#">Item 1</a></li>
@@ -143,83 +146,78 @@
         </ul>
       </div>
 
-      <!-- Right Column: Titles 1-6 with pink 200x50 images -->
-      <div class="right-column">
-        <div class="mini-title-block">
+      <!-- RIGHT SUB-SECTION: Title 1..6 (Pink 200x50 images) -->
+      <div class="right-titles">
+        <div class="mini-title">
           <h3>Title 1</h3>
           <img 
             src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
             alt="Pink 200 x 50"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div class="mini-title-block">
+        <div class="mini-title">
           <h3>Title 2</h3>
           <img 
             src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
             alt="Pink 200 x 50"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div class="mini-title-block">
+        <div class="mini-title">
           <h3>Title 3</h3>
           <img 
             src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
             alt="Pink 200 x 50"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div class="mini-title-block">
+        <div class="mini-title">
           <h3>Title 4</h3>
           <img 
             src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
             alt="Pink 200 x 50"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div class="mini-title-block">
+        <div class="mini-title">
           <h3>Title 5</h3>
           <img 
             src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
             alt="Pink 200 x 50"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        <div class="mini-title-block">
+        <div class="mini-title">
           <h3>Title 6</h3>
           <img 
             src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
             alt="Pink 200 x 50"
           />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 4. FOOTER -->
     <footer>
       <p>@portiaplante.com</p>
     </footer>
   </div>
 </body>
 </html>
+
 
 
