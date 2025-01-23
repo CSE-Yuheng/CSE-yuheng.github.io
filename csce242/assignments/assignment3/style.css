@@ -1,231 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Layout with Flex</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- Page Wrapper with a subtle border and cream background -->
-  <div class="page-wrapper">
-    <!-- Header + Pink Nav -->
-    <header>
-      <!-- Horizontal Pink Nav with 6 items -->
-      <nav class="top-nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Store</a></li>
-          <li><a href="#">Staff</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </nav>
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      <!-- Centered Title -->
-      <h1>Layout with Flex</h1>
-    </header>
+/* Body + Page Wrapper */
+body {
+  background-color: #fdfbe7; /* Cream */
+  font-family: Arial, sans-serif;
+  color: #5e7b7a; /* Muted teal text */
+}
 
-    <!-- Big Ideas Section (Cream Background) -->
-    <section class="big-ideas">
-      <h2>Big Ideas!</h2>
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #ccc; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-      <!-- Idea 1 (Teal) -->
-      <div class="idea-block teal-bg">
-        <div class="idea-text">
-          <h3>Idea 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-            laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </div>
-        <div class="idea-img">
-          <!-- Teal 200x200 -->
-          <img 
-            src="https://fakeimg.pl/200x200/9cb9b8/fdfbe7?text=200%20x%20200" 
-            alt="Teal 200 x 200"
-          />
-        </div>
-      </div>
+/* 1. HEADER & NAV */
+header {
+  background-color: #fdfbe7;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1em;
+}
 
-      <!-- Idea 2 (Pink) -->
-      <div class="idea-block pink-bg reverse-row">
-        <div class="idea-img">
-          <!-- Teal 200x200 inside pink block -->
-          <img 
-            src="https://fakeimg.pl/200x200/759190/fdfbe7?text=200%20x%20200" 
-            alt="Pink 200 x 200"
-          />
-        </div>
-        <div class="idea-text">
-          <h3>Idea 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-            laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-        </div>
-      </div>
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: #db8b8b; /* Pink */
+}
 
-      <!-- Idea 3 (Teal) -->
-      <div class="idea-block teal-bg">
-        <div class="idea-text">
-          <h3>Idea 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div class="idea-img">
-          <!-- Teal 200x200 -->
-          <img 
-            src="https://fakeimg.pl/200x200/9cb9b8/fdfbe7?text=200%20x%20200" 
-            alt="Teal 200 x 200"
-          />
-        </div>
-      </div>
-    </section>
+.top-nav li {
+  border-right: 1px solid #e7a0a0;
+  flex: 1;
+  text-align: center;
+}
+.top-nav li:last-child {
+  border-right: none;
+}
+.top-nav a {
+  display: block;
+  padding: 0.75em;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
 
-    <!-- Large Teal Strip -->
-    <section class="large-teal-strip">
-      <!-- Left Column: Titles 1-4 (Pink 200x100) -->
-      <div class="left-col">
-        <article class="title-item">
-          <h3>Title 1</h3>
-          <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </article>
-        <article class="title-item">
-          <h3>Title 2</h3>
-          <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </article>
-        <article class="title-item">
-          <h3>Title 3</h3>
-          <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </article>
-        <article class="title-item">
-          <h3>Title 4</h3>
-          <img 
-            src="https://fakeimg.pl/200x100/db8b8b/fdfbe7?text=200%20x%20100" 
-            alt="Pink 200 x 100"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </article>
-      </div>
+header h1 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 2rem;
+  color: #759190; /* teal text */
+}
 
-      <!-- Middle Pink Column: Links -->
-      <div class="middle-col pink-bg">
-        <h3>Links</h3>
-        <ul>
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
-          <li><a href="#">Item 4</a></li>
-        </ul>
-      </div>
+/* 2. BIG IDEAS SECTION */
+.big-ideas {
+  padding: 1em;
+  border-bottom: 1px solid #ccc;
+}
+.big-ideas h2 {
+  font-size: 1.8rem;
+  color: #759190;
+  margin-bottom: 1em;
+}
 
-      <!-- Right Column: Titles 1-6 (Pink 200x50) -->
-      <div class="right-col">
-        <article class="mini-title">
-          <h3>Title 1</h3>
-          <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
-          </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 2</h3>
-          <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
-          </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 3</h3>
-          <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
-          </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 4</h3>
-          <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
-          </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 5</h3>
-          <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
-          </p>
-        </article>
-        <article class="mini-title">
-          <h3>Title 6</h3>
-          <img 
-            src="https://fakeimg.pl/200x50/db8b8b/fdfbe7?text=200%20x%2050" 
-            alt="Pink 200 x 50"
-          />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-            eiusmod tempor incididunt.
-          </p>
-        </article>
-      </div>
-    </section>
+/* Each Idea Block: Flex layout (text + image) */
+.idea-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+  padding: 1em;
+  color: #fdfbe7; /* white-ish text for teal/pink backgrounds */
+}
 
-    <!-- Footer -->
-    <footer>
-      <p>@portiaplante.com</p>
-    </footer>
-  </div>
-</body>
-</html>
+.idea-text {
+  flex: 2;
+  margin-right: 1em;
+}
+.idea-text h3 {
+  margin-bottom: 0.5em;
+  color: #fdfbe7;
+}
+.idea-text p {
+  line-height: 1.5;
+}
+
+.idea-img {
+  flex: 1;
+  text-align: right;
+}
+.idea-img img {
+  max-width: 100%;
+  border: 3px solid rgba(0,0,0,0.1);
+}
+
+/* Teal or Pink backgrounds */
+.teal-bg  { background-color: #759190; }
+.pink-bg  { background-color: #db8b8b; }
+/* Reverse row for Idea 2 (image on left, text on right) */
+.reverse-row { flex-direction: row-reverse; }
+
+/* 3. LARGE TEAL STRIP */
+.large-teal-strip {
+  background-color: #9cb9b8;
+  display: flex;
+  padding: 1em;
+}
+
+/* LEFT COL: 4 Titles with pink 200x100 images in 2x2 grid */
+.left-col {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap; /* 2 in each row */
+}
+
+.title-item {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 1em;
+}
+.title-item h3 {
+  margin-bottom: 0.5em;
+  color: #fdfbe7;
+}
+.title-item p {
+  color: #fdfbe7;
+  line-height: 1.4;
+}
+
+/* MIDDLE COL: Pink box with "Links" */
+.middle-col {
+  flex: 1;
+  margin: 0 1em;
+  padding: 1em;
+  color: #fdfbe7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.middle-col h3 {
+  margin-bottom: 0.5em;
+}
+.middle-col ul {
+  list-style: none;
+}
+.middle-col li {
+  margin-bottom: 0.5em;
+}
+.middle-col a {
+  text-decoration: none;
+  color: #fdfbe7;
+}
+.middle-col a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT COL: 6 Titles with pink 200x50 images (2 rows x 3 columns) */
+.right-col {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+}
+.mini-title {
+  width: 33.33%; /* 3 per row */
+  box-sizing: border-box;
+  padding: 1em;
+}
+.mini-title h3 {
+  margin-bottom: 0.5em;
+  color: #fdfbe7;
+}
+.mini-title p {
+  color: #fdfbe7;
+  line-height: 1.4;
+}
+
+/* 4. FOOTER */
+footer {
+  text-align: center;
+  padding: 1em;
+  margin-top: auto;
+  border-top: 1px solid #ccc;
+  background-color: #fdfbe7;
+}
+footer p {
+  color: #5e7b7a;
+  font-style: italic;
+}
+
 
