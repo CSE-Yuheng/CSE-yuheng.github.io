@@ -1,18 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal - CSCE 240-001</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal - CSCE 242-001</title>
+
+  <!-- Inline CSS for demonstration; alternatively, place in a separate .css file -->
+  <style>
+    /* 1) Set a more appealing default font */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Arial", "Helvetica", sans-serif;
+      /* 5) Add a background color or an image */
+      /* Example background color: light gray */
+      background-color: #f4f4f4;
+      color: #333; /* Default text color */
+    }
+
+    /* 4) Create a formatted div with an ID to nicely contain all content */
+    #main-content {
+      max-width: 900px; 
+      margin: 40px auto;
+      background-color: #ffffff; 
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* 7) Remove underline on links & 8) Recolor links to not be default blue */
+    a {
+      text-decoration: none;      /* removes underline */
+      color: #007BFF;            /* choose a custom link color */
+    }
+
+    /* When hovering, we can slightly underline for clarity */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1, h2 {
+      color: #333; /* Make headings stand out but still match overall theme */
+    }
+
+    p, li {
+      line-height: 1.5;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- 4) Formatted div wrapper for your page content -->
+  <div id="main-content">
     <h1>CSCE 240-002: Introduction to Programming</h1>
     <p><strong>Student Name:</strong> Yuheng Zhu</p>
-    <p>This course introduces fundamental programming concepts, covering topics like algorithms, data structures, and software design. Students will gain hands-on experience with coding in C++ and solving real-world problems.</p>
-    
+    <p>
+      This course introduces fundamental programming concepts, covering topics
+      like algorithms, data structures, and software design. Students will
+      gain hands-on experience with coding in C++ and solving real-world problems.
+    </p>
+
     <h2>Assignments</h2>
     <ul>
-        <li><a href="assignments/assignment1/index.html">Assignment 1</a></li>
+      <li><a href="assignments/assignment1/index.html">Assignment 1</a></li>
+      <!-- 1) Include a link to Assignment 2 -->
+      <li><a href="assignments/assignment2/index.html">Assignment 2</a></li>
     </ul>
+  </div>
 </body>
 </html>
