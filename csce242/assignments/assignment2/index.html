@@ -12,100 +12,86 @@
     rel="stylesheet"
   />
 
-  <style>
-    
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Open Sans", sans-serif;
-      /* Background image */
-     background: url("images/gunback.jpg.jpg") no-repeat center center fixed;
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    background: url("images/gunback.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+  }
 
-      background-size: cover;
-      color: #333;
-    }
+  #main-content {
+    max-width: 900px; 
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
 
-    
-    #main-content {
-      max-width: 900px; 
-      margin: 40px auto;
-      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+  nav {
+    display: flex;
+    gap: 10px;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: #34495e;
+  }
 
-    /* Navigation Styles */
-    nav {
-      display: flex;
-      gap: 10px;
-      background-color: #2c3e50;
-      padding: 10px 20px;
-      border-radius: 8px;
-      margin-bottom: 1.5em;
-    }
+  h1 {
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+  }
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+  }
+  p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
+  /* Updated image-frame to enforce uniform width */
+  .image-frame {
+    width: 400px;   /* Force a consistent width for all images */
+    height: auto;   /* Maintain aspect ratio */
+    border: 2px solid #ccc;
+    padding: 6px;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 1em;
+  }
 
-    nav a:hover {
-      background-color: #34495e;
-    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    background-color: #ecf0f1;
+  }
+  th, td {
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    text-align: left;
+  }
+  th {
+    background-color: #2c3e50;
+    color: #fff;
+  }
+</style>
 
-    /* Headings */
-    h1 {
-      margin-bottom: 0.5em;
-      color: #2c3e50;
-    }
-
-    h2 {
-      margin-top: 1em;
-      margin-bottom: 0.5em;
-      color: #2c3e50;
-    }
-
-    /* Paragraphs */
-    p {
-      line-height: 1.6;
-      margin-bottom: 1em;
-    }
-
-    /* ------------------------------
-       Class-based CSS Rule Example
-       (Used for images to add borders, padding, etc.)
-       ------------------------------ */
-    .image-frame {
-      border: 2px solid #ccc;
-      padding: 6px;
-      border-radius: 4px;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 1em;
-    }
-
-    /* Table Styles */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-      background-color: #ecf0f1; /* Light background for the table area */
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #bdc3c7;
-      text-align: left;
-    }
-    th {
-      background-color: #2c3e50;
-      color: #fff;
-    }
-  </style>
 </head>
 
 <body>
