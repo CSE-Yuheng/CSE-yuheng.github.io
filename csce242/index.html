@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CSCE 242 Portal</title>
-  <!-- Google Fonts Example -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
@@ -19,19 +19,20 @@
     }
     body {
       font-family: "Open Sans", sans-serif;
-      background-color: #f9f9f9; 
+      background-color: #f9f9f9;
       color: #333;
       padding: 1rem;
     }
 
-    /* 2. HEADER */
+    /* 2. HEADER: centered */
     header {
-      text-align: left;  /* or center as you prefer */
+      text-align: center;
       margin-bottom: 1rem;
     }
     header h1 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
+      font-weight: 400;
     }
     header .course-title {
       font-size: 2rem;
@@ -45,22 +46,22 @@
       margin-bottom: 2rem;
     }
 
-    /* 3. MAIN WRAPPER: Flex container for the assignment cards */
+    /* 3. MAIN WRAPPER (Flex container) */
     .assignments-container {
-      max-width: 1200px;  /* center in wide screens */
+      max-width: 1200px; 
       margin: 0 auto;
       display: flex;
-      justify-content: center;  /* horizontally space the cards */
+      justify-content: center; 
       gap: 1.5rem;
       padding: 0 1rem;
-      flex-wrap: wrap;   /* allows wrapping if viewport is narrow */
+      flex-wrap: wrap;  
     }
 
     /* 4. INDIVIDUAL ASSIGNMENT CARDS */
     .assignment-card {
-      background-color: #e6eefc; /* Light blue background from screenshot */
+      background-color: #e6eefc;
       border-radius: 4px;
-      width: 300px;              /* fixed width for consistent columns */
+      width: 300px;
       padding: 1rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
@@ -72,14 +73,25 @@
       font-size: 1.1rem;
       margin-bottom: 1rem;
     }
+    /* Anchor inside h2: remove default link underline, color is inherited */
+    .assignment-card h2 a {
+      color: inherit;
+      text-decoration: none;  
+    }
+    .assignment-card h2 a:hover {
+      text-decoration: underline;
+    }
 
-    /* Force each assignment image to 300×150 with object-fit: cover */
     .assignment-card img {
       width: 300px;
       height: 150px;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 1px solid #ccc; /* optional frame-like border */
+      border: 1px solid #ccc;
+    }
+    /* Make the image clickable too */
+    .assignment-card .img-link {
+      text-decoration: none; 
     }
 
     .assignment-card p {
@@ -88,7 +100,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* 5. MEDIA QUERY FOR SMALLER SCREENS */
+    /* 5. MEDIA QUERY (smaller screens) */
     @media (max-width: 600px) {
       .assignments-container {
         flex-direction: column;
@@ -96,11 +108,11 @@
         gap: 2rem;
       }
       .assignment-card {
-        width: 90%; /* nearly full width on mobile */
+        width: 90%;
       }
     }
 
-    /* 6. FOOTER (Optional) */
+    /* 6. FOOTER */
     footer {
       text-align: center;
       margin-top: 2rem;
@@ -112,7 +124,8 @@
 
   <!-- Header / Page Title -->
   <header>
-    <h1>Portia Plante</h1>
+    <!-- Replaced “Portia Plante” with “Yuheng Zhu” -->
+    <h1>Yuheng Zhu</h1>
     <div class="course-title">CSCE 242: Client-Server Computing</div>
     <div class="subtitle">Assignments</div>
   </header>
@@ -120,37 +133,60 @@
   <!-- Main content area - assignment cards -->
   <main>
     <section class="assignments-container">
-      <!-- Card 1 - Assignment 1: bugatii.jpg -->
+      <!-- Card 1 -->
       <div class="assignment-card">
-        <h2>Assignment 1 – Basic HTML</h2>
-        <img 
-          src="images/bugatii.jpg" 
-          alt="Assignment 1 Screenshot"
-        />
+        <!-- Clickable title -->
+        <h2>
+          <a href="assignments/assignment1/index.html">Assignment 1 – Basic HTML</a>
+        </h2>
+        <!-- Clickable image -->
+        <a 
+          href="assignments/assignment1/index.html" 
+          class="img-link"
+        >
+          <img 
+            src="images/bugatii.jpg" 
+            alt="Assignment 1 Screenshot"
+          />
+        </a>
         <p>
-        
+         
         </p>
       </div>
 
-      <!-- Card 2 - Assignment 2: gunback.jpg -->
+      <!-- Card 2 -->
       <div class="assignment-card">
-        <h2>Assignment 2 – Basic CSS</h2>
-        <img 
-          src="images/gunback.jpg" 
-          alt="Assignment 2 Screenshot"
-        />
+        <h2>
+          <a href="assignments/assignment2/index.html">Assignment 2 – Basic CSS</a>
+        </h2>
+        <a 
+          href="assignments/assignment2/index.html" 
+          class="img-link"
+        >
+          <img 
+            src="images/gunback.jpg" 
+            alt="Assignment 2 Screenshot"
+          />
+        </a>
         <p>
-      
+         
         </p>
       </div>
 
-      <!-- Card 3 - Assignment 3: layout.png -->
+      <!-- Card 3: Keep “Assignment 3 – Page Layout” text exactly the same -->
       <div class="assignment-card">
-        <h2>Assignment 3 – Page Layout</h2>
-        <img 
-          src="images/layout.png" 
-          alt="Assignment 3 Screenshot"
-        />
+        <h2>
+          <a href="assignments/assignment3/index.html">Assignment 3 – Page Layout</a>
+        </h2>
+        <a 
+          href="assignments/assignment3/index.html" 
+          class="img-link"
+        >
+          <img 
+            src="images/layout.png" 
+            alt="Assignment 3 Screenshot"
+          />
+        </a>
         <p>
          
         </p>
@@ -160,10 +196,9 @@
 
   <!-- Footer (Optional) -->
   <footer>
-    <p>&copy; Yuheng Zhu</p>
+    <p>&copy; 2025 Yuheng Zhu</p>
   </footer>
 
 </body>
 </html>
-
 
