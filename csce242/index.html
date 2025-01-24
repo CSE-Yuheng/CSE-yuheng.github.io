@@ -26,7 +26,7 @@
 
     /* 2. HEADER */
     header {
-      text-align: left;  /* or left/center as desired */
+      text-align: left;  /* or center as you prefer */
       margin-bottom: 1rem;
     }
     header h1 {
@@ -45,39 +45,43 @@
       margin-bottom: 2rem;
     }
 
-    /* 3. MAIN WRAPPER */
+    /* 3. MAIN WRAPPER: Flex container for the assignment cards */
     .assignments-container {
       max-width: 1200px;  /* center in wide screens */
       margin: 0 auto;
       display: flex;
-      justify-content: center;  /* distribute cards horizontally */
+      justify-content: center;  /* horizontally space the cards */
       gap: 1.5rem;
       padding: 0 1rem;
-      flex-wrap: wrap;  /* allows wrapping if viewport is narrow */
+      flex-wrap: wrap;   /* allows wrapping if viewport is narrow */
     }
 
     /* 4. INDIVIDUAL ASSIGNMENT CARDS */
     .assignment-card {
       background-color: #e6eefc; /* Light blue background from screenshot */
       border-radius: 4px;
-      width: 300px;        /* fixed width for consistent columns on large screens */
+      width: 300px;              /* fixed width for consistent columns */
       padding: 1rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
-      align-items: center; /* center the image & heading & text */
+      align-items: center;
       text-align: center;
     }
     .assignment-card h2 {
       font-size: 1.1rem;
       margin-bottom: 1rem;
     }
+
+    /* Force each assignment image to 300×150 with object-fit: cover */
     .assignment-card img {
-      max-width: 100%;
-      height: auto;
+      width: 300px;
+      height: 150px;
+      object-fit: cover;
       margin-bottom: 1rem;
-      border: 1px solid #ccc;   /* optional border to mimic placeholder frame */
+      border: 1px solid #ccc; /* optional frame-like border */
     }
+
     .assignment-card p {
       font-size: 0.9rem;
       line-height: 1.4;
@@ -87,13 +91,12 @@
     /* 5. MEDIA QUERY FOR SMALLER SCREENS */
     @media (max-width: 600px) {
       .assignments-container {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         gap: 2rem;
       }
       .assignment-card {
-        width: 90%;  /* almost full width for mobile */
-        text-align: center;
+        width: 90%; /* nearly full width on mobile */
       }
     }
 
@@ -117,49 +120,48 @@
   <!-- Main content area - assignment cards -->
   <main>
     <section class="assignments-container">
-      <!-- Card 1 -->
+      <!-- Card 1 - Assignment 1: bugatii.jpg -->
       <div class="assignment-card">
         <h2>Assignment 1 – Basic HTML</h2>
-        <!-- Replace src with your real screenshot or placeholder, same size for each -->
         <img 
-          src="https://via.placeholder.com/300x150.png?text=300+x+150" 
-          alt="Assignment 1 Screenshot" 
+          src="images/bugatii.jpg" 
+          alt="Assignment 1 Screenshot"
         />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Mauris luctus lacus augue. Duis sed tincidunt sapien.
+        
         </p>
       </div>
 
-      <!-- Card 2 -->
+      <!-- Card 2 - Assignment 2: gunback.jpg -->
       <div class="assignment-card">
         <h2>Assignment 2 – Basic CSS</h2>
         <img 
-          src="https://via.placeholder.com/300x150.png?text=300+x+150" 
-          alt="Assignment 2 Screenshot" 
+          src="images/gunback.jpg" 
+          alt="Assignment 2 Screenshot"
         />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Mauris luctus lacus augue. Duis sed tincidunt sapien.
+      
         </p>
       </div>
 
-      <!-- Card 3 -->
+      <!-- Card 3 - Assignment 3: layout.png -->
       <div class="assignment-card">
         <h2>Assignment 3 – Page Layout</h2>
         <img 
-          src="https://via.placeholder.com/300x150.png?text=300+x+150" 
-          alt="Assignment 3 Screenshot" 
+          src="images/layout.png" 
+          alt="Assignment 3 Screenshot"
         />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Mauris luctus lacus augue. Duis sed tincidunt sapien.
+         
         </p>
       </div>
     </section>
   </main>
 
-
+  <!-- Footer (Optional) -->
+  <footer>
+    <p>&copy; Yuheng Zhu</p>
+  </footer>
 
 </body>
 </html>
