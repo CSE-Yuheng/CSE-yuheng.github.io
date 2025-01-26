@@ -21,26 +21,24 @@
       font-family: "Open Sans", sans-serif;
       color: #333;
       padding: 1rem;
-
-     
     }
 
     /* 2. HEADER: centered */
-    header {
+    #header {
       text-align: center;
       margin-bottom: 1rem;
     }
-    header h1 {
+    #header h1 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
       font-weight: 400;
     }
-    header .course-title {
+    #course-title {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    header .subtitle {
+    #subtitle {
       font-size: 1.3rem;
       font-weight: 400;
       color: #222;
@@ -48,7 +46,7 @@
     }
 
     /* 3. MAIN WRAPPER (Flex container) */
-    .assignments-container {
+    #assignments-container {
       max-width: 1200px; 
       margin: 0 auto;
       display: flex;
@@ -74,7 +72,6 @@
       font-size: 1.1rem;
       margin-bottom: 1rem;
     }
-    /* Anchor inside h2: remove default link underline, color is inherited */
     .assignment-card h2 a {
       color: inherit;
       text-decoration: none;  
@@ -90,7 +87,6 @@
       margin-bottom: 1rem;
       border: 1px solid #ccc;
     }
-    /* Make the image clickable too */
     .assignment-card .img-link {
       text-decoration: none; 
     }
@@ -103,7 +99,7 @@
 
     /* 5. MEDIA QUERY (smaller screens) */
     @media (max-width: 600px) {
-      .assignments-container {
+      #assignments-container {
         flex-direction: column;
         align-items: center;
         gap: 2rem;
@@ -114,7 +110,7 @@
     }
 
     /* 6. FOOTER */
-    footer {
+    #footer {
       text-align: center;
       margin-top: 2rem;
       color: #666;
@@ -124,30 +120,22 @@
 <body>
 
   <!-- Header / Page Title -->
-  <header>
+  <header id="header">
     <h1>Yuheng Zhu</h1>
-    <div class="course-title">CSCE 242: Client-Server Computing</div>
-    <div class="subtitle">Assignments</div>
+    <div id="course-title">CSCE 242: Client-Server Computing</div>
+    <div id="subtitle">Assignments</div>
   </header>
 
   <!-- Main content area - assignment cards -->
   <main>
-    <section class="assignments-container">
+    <section id="assignments-container">
       <!-- Card 1 -->
       <div class="assignment-card">
-        <!-- Clickable title -->
         <h2>
           <a href="assignments/assignment1/index.html">Assignment 1 – Basic HTML</a>
         </h2>
-        <!-- Clickable image -->
-        <a 
-          href="assignments/assignment1/index.html" 
-          class="img-link"
-        >
-          <img 
-            src="images/bugatii.jpg" 
-            alt="Assignment 1 Screenshot"
-          />
+        <a href="assignments/assignment1/index.html" class="img-link">
+          <img src="images/bugatii.jpg" alt="Assignment 1 Screenshot"/>
         </a>
         <p></p>
       </div>
@@ -157,43 +145,32 @@
         <h2>
           <a href="assignments/assignment2/index.html">Assignment 2 – Basic CSS</a>
         </h2>
-        <a 
-          href="assignments/assignment2/index.html" 
-          class="img-link"
-        >
-          <img 
-            src="images/gunback.jpg" 
-            alt="Assignment 2 Screenshot"
-          />
+        <a href="assignments/assignment2/index.html" class="img-link">
+          <img src="images/gunback.jpg" alt="Assignment 2 Screenshot"/>
         </a>
         <p></p>
       </div>
 
-      <!-- Card 3: Keep “Assignment 3 – Page Layout” text exactly the same -->
+      <!-- Card 3 -->
       <div class="assignment-card">
         <h2>
           <a href="assignments/assignment3/index.html">Assignment 3 – Page Layout</a>
         </h2>
-        <a 
-          href="assignments/assignment3/index.html" 
-          class="img-link"
-        >
-          <img 
-            src="images/layout.png" 
-            alt="Assignment 3 Screenshot"
-          />
+        <a href="assignments/assignment3/index.html" class="img-link">
+          <img src="images/layout.png" alt="Assignment 3 Screenshot"/>
         </a>
         <p></p>
       </div>
     </section>
   </main>
 
-  <!-- Footer (Optional) -->
-  <footer>
+  <!-- Footer -->
+  <footer id="footer">
     <p>&copy; 2025 Yuheng Zhu</p>
   </footer>
 
 </body>
 </html>
+
 
 
