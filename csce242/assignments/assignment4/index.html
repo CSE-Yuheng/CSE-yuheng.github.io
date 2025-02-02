@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College of Arts & Sciences</title>
+    <title>College of Arts and Sciences</title>
     <style>
         :root {
-            --nav-dark: #2d2d2d;
+            --nav-bg: #2d2d2d;
             --red-accent: #990000;
             --light-gray: #f5f5f5;
+            --text-dark: #333;
         }
 
         * {
@@ -20,16 +21,16 @@
 
         /* Navigation */
         .top-nav {
-            background: var(--nav-dark);
+            background: var(--nav-bg);
             padding: 1rem 2rem;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-        
+
         .nav-links a {
             color: white;
             text-decoration: none;
@@ -38,57 +39,73 @@
 
         /* Hero Section */
         .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 400px;
+            height: 400px;
             background: url('https://place-hold.it/1440x400') center/cover;
+            display: flex;
+            align-items: center;
             padding: 2rem;
+        }
+
+        .hero h1 {
             color: white;
+            font-size: 2.5rem;
         }
 
-        /* Main Content Sections */
-        .section {
-            padding: 3rem 2rem;
-        }
-
-        .columns-3 {
+        /* Main Content */
+        .main-content {
             display: flex;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .column {
-            flex: 1;
-            background: var(--light-gray);
             padding: 2rem;
-        }
-
-        .news-grid {
-            display: flex;
             gap: 2rem;
-            margin-top: 2rem;
         }
 
-        .news-card {
-            flex: 1;
+        /* Sidebar */
+        .sidebar {
+            width: 25%;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav a {
+            color: var(--red-accent);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            width: 75%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
             border: 1px solid #ddd;
         }
 
-        .split-section {
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--light-gray);
+            padding: 2rem;
             display: flex;
             gap: 2rem;
-            align-items: center;
-            background: var(--light-gray);
         }
 
-        .split-section > * {
+        .footer-section {
             flex: 1;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
         }
     </style>
 </head>
@@ -97,54 +114,58 @@
         <ul class="nav-links">
             <li><a href="#">About</a></li>
             <li><a href="#">Academics</a></li>
+            <li><a href="#">Departments</a></li>
             <li><a href="#">Research</a></li>
-            <li><a href="#">People</a></li>
             <li><a href="#">Alumni</a></li>
         </ul>
     </nav>
 
     <section class="hero">
         <h1>College of Arts & Sciences</h1>
-        <p>Lorem ipsum dolor sit amet consectetur</p>
     </section>
 
-    <section class="section">
-        <div class="columns-3">
-            <div class="column">
-                <h2>Undergraduate</h2>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <div class="column">
-                <h2>Graduate</h2>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <div class="column">
-                <h2>Departments</h2>
-                <p>Lorem ipsum dolor sit amet</p>
-            </div>
-        </div>
-    </section>
+    <main class="main-content">
+        <aside class="sidebar">
+            <nav>
+                <ul class="sidebar-nav">
+                    <li><a href="#">Undergraduate</a></li>
+                    <li><a href="#">Graduate</a></li>
+                    <li><a href="#">Departments</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="#">Alumni</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <section class="section">
-        <h2>News & Events</h2>
-        <div class="news-grid">
-            <div class="news-card">
-                <img src="https://place-hold.it/400x250">
-                <div class="content">
-                    <h3>News Title 1</h3>
-                    <p>Lorem ipsum dolor sit amet</p>
+        <section class="content-grid">
+            <article class="card">
+                <img src="https://place-hold.it/400x200" alt="News">
+                <div class="card-content">
+                    <h3>Lorem Ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
-            </div>
-            <!-- Repeat 2 more news cards -->
-        </div>
-    </section>
+            </article>
+            <!-- Repeat card 5 more times -->
+        </section>
+    </main>
 
-    <section class="split-section section">
-        <img src="https://place-hold.it/600x400">
-        <div>
-            <h2>Take the Next Step</h2>
-            <p>Lorem ipsum dolor sit amet</p>
+    <footer class="footer">
+        <div class="footer-section">
+            <h4>Colleges & Schools</h4>
+            <ul>
+                <li><a href="#">Arts & Sciences</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Engineering</a></li>
+            </ul>
         </div>
-    </section>
+        <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">Financial Aid</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
