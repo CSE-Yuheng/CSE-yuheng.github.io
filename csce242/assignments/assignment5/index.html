@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 7 - JavaScript Interactions</title>
+    <title>Assignment 5 - Introduction to JavaScript</title>
     <style>
-        /* Base grid layout inspired by CSS Grid documentation */
+        /* Base styles inspired by modern CSS grid layouts */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: #4a90e2;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
         .container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -16,13 +36,13 @@
         }
 
         .column {
-            background: #f0f7ff;
-            border-radius: 10px;
-            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
         }
 
         .column:hover {
@@ -32,41 +52,56 @@
         .color-star {
             font-size: 3rem;
             margin: 1rem 0;
+            color: #ffd700;
         }
 
         input[type="color"] {
             width: 100px;
             height: 40px;
             margin: 1rem 0;
+            border: none;
+            background: none;
         }
 
         .image-container {
             width: 200px;
             height: 200px;
             margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 8px;
+            transition: opacity 0.3s ease;
         }
 
-        /* Mobile layout */
+        #helloContainer div {
+            margin: 0.5rem 0;
+            color: #2c3e50;
+        }
+
+        /* Mobile responsive layout */
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
                 padding: 1rem;
             }
-            
+
             .column {
-                margin-bottom: 1rem;
+                margin-bottom: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <header class="intro">
+        <h1>Assignment 5: Introduction to JavaScript</h1>
+        <p>Explore basic JavaScript interactions through these interactive components.</p>
+    </header>
+
     <div class="container">
         <!-- Say Hello Column -->
         <div class="column" id="helloColumn">
@@ -74,51 +109,45 @@
             <div id="helloContainer"></div>
         </div>
 
-        <!-- Pick a Color Column -->
+        <!-- Color Picker Column -->
         <div class="column">
             <h2>Pick a Color</h2>
             <div class="color-star">★</div>
-            <input type="color" id="colorPicker" value="#000000">
+            <input type="color" id="colorPicker" value="#4a90e2">
         </div>
 
-        <!-- Image Change Column -->
+        <!-- Image Changer Column -->
         <div class="column">
             <h2>Image Change</h2>
             <div class="image-container">
-                <img id="changingImage" src="https://picsum.photos/200" alt="Changeable image">
+                <img id="toggleImage" src="https://picsum.photos/200" alt="Toggleable image">
             </div>
         </div>
     </div>
 
     <script>
-        // Say Hello functionality
-        const helloColumn = document.getElementById('helloColumn');
-        const helloContainer = document.getElementById('helloContainer');
-        let helloCount = 0;
+        // Modern JavaScript implementation using ES6 features
+        const helloHandler = () => {
+            const newHello = document.createElement('div');
+            newHello.textContent = 'hello';
+            document.getElementById('helloContainer').appendChild(newHello);
+        };
 
-        helloColumn.addEventListener('click', () => {
-            helloCount++;
-            helloContainer.innerHTML += `<div>hello</div>`;
-        });
+        const colorHandler = (event) => {
+            document.querySelector('.color-star').style.color = event.target.value;
+        };
 
-        // Color Picker functionality
-        const colorPicker = document.getElementById('colorPicker');
-        const colorStar = document.querySelector('.color-star');
+        const imageHandler = () => {
+            const imgElement = document.getElementById('toggleImage');
+            imgElement.src = imgElement.src.includes('200') 
+                ? 'https://picsum.photos/201' 
+                : 'https://picsum.photos/200';
+        };
 
-        colorPicker.addEventListener('input', (e) => {
-            colorStar.style.color = e.target.value;
-        });
-
-        // Image Change functionality
-        const changingImage = document.getElementById('changingImage');
-        let isFirstImage = true;
-
-        changingImage.addEventListener('click', () => {
-            isFirstImage = !isFirstImage;
-            changingImage.src = isFirstImage 
-                ? 'https://picsum.photos/200' 
-                : 'https://picsum.photos/201';
-        });
+        // Event listeners with proper scoping
+        document.getElementById('helloColumn').addEventListener('click', helloHandler);
+        document.getElementById('colorPicker').addEventListener('input', colorHandler);
+        document.getElementById('toggleImage').addEventListener('click', imageHandler);
     </script>
 </body>
 </html>
