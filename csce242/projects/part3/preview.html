@@ -2,30 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Project Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <nav>
-      <ul>
+      <div class="logo">Creative Project</div>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="preview.html" class="active">Preview</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="menu-toggle">&#9776;</div>
     </nav>
   </header>
+
   <main>
     <section class="preview">
-      <h1>Project Preview</h1>
-      <p>This page is a preview of a project. More details can be added later.</p>
-      <img src="https://via.placeholder.com/600x400" alt="Project Detailed Preview">
+      <h1>Project Detailed Preview</h1>
+      <p>Take a closer look at our innovative project with creative design.</p>
+      <img src="https://via.placeholder.com/800x500?text=Detailed+Preview" alt="Project Detailed Preview">
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Yuheng Zhu</p>
+    <p>&copy; 2025 Creative Projects by Your Name</p>
   </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
