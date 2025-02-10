@@ -2,39 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Main 242 Home Page</title>
+  <!-- Google Fonts for a creative touch -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <nav>
-      <ul>
+      <div class="logo">My Creative Site</div>
+      <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="preview.html">Preview</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="menu-toggle">&#9776;</div>
     </nav>
   </header>
+
   <main>
     <section class="hero">
-      <h1>Welcome to My Project</h1>
-      <p>This is the Main 242 Home Page. Add your project details here.</p>
+      <h1>Welcome to My Creative Project</h1>
+      <p>Discover innovative projects with modern design elements.</p>
+      <a href="preview.html" class="btn">View Project</a>
     </section>
+
     <section class="projects">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <a href="preview.html">
-          <img src="https://via.placeholder.com/300" alt="Project Preview">
-          <h3>Project Preview</h3>
-        </a>
+      <h2>Featured Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project 1">
+          <h3>Project One</h3>
+          <p>A brief creative description of project one.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200?text=Project+2" alt="Project 2">
+          <h3>Project Two</h3>
+          <p>A brief creative description of project two.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200?text=Project+3" alt="Project 3">
+          <h3>Project Three</h3>
+          <p>A brief creative description of project three.</p>
+        </div>
       </div>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2025 Yuheng Zhu</p>
+    <p>&copy; 2025 Creative Projects by Your Name</p>
   </footer>
+
+  <script>
+    // Mobile menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
 
