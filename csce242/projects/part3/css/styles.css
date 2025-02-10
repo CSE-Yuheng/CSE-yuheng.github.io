@@ -1,4 +1,4 @@
-/* Define creative CSS variabless */
+/* Define creative CSS variables */
 :root {
   --primary-color: #ff6f61;
   --secondary-color: #4a90e2;
@@ -152,7 +152,7 @@ nav {
   margin: 0 1rem 1.5rem;
 }
 
-/* About and Preview Sections */
+/* About, Preview, and Contact Sections */
 .about, .preview, .contact {
   max-width: 800px;
   margin: auto;
