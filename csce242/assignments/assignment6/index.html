@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 - If Statements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navigation Styles */
+        nav {
+            width: 100%;
+            max-width: 800px;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .nav-list li {
+            position: relative;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #2c3e50;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                background: white;
+                width: 100%;
+                top: 100%;
+                left: 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            .nav-list li {
+                padding: 0.75rem;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .nav-list li:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Desktop Pipe Separators */
+        @media (min-width: 768px) {
+            .nav-list li:not(:last-child)::after {
+                content: "|";
+                position: absolute;
+                right: -0.75rem;
+                color: #2c3e50;
+            }
+        }
+
+        /* Exercise Sections */
+        .exercise-section {
+            display: none;
+            max-width: 800px;
+            width: 90%;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 1rem;
+        }
+
+        .active-section {
+            display: block;
+        }
+
+        /* Traveling Section */
+        #transportation-input {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .vehicle-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem auto;
+            display: none;
+        }
+
+        /* Color My Heart Section */
+        .color-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .color-button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+
+        #heart {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            background-color: white;
+            position: relative;
+            transform: rotate(-45deg);
+            border: 2px solid #ddd;
+        }
+
+        #heart::before,
+        #heart::after {
+            content: '';
+            width: 200px;
+            height: 200px;
+            background-color: inherit;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #heart::before {
+            top: -100px;
+            left: 0;
+        }
+
+        #heart::after {
+            top: 0;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">▼ Menu</button>
+        <ul class="nav-list">
+            <li><a href="#" onclick="showSection('traveling')">Exercise 1</a></li>
+            <li><a href="#" onclick="showSection('picture-chooser')">Exercise 2</a></li>
+        </ul>
+    </nav>
+
+    <!-- Traveling Section -->
+    <section id="traveling" class="exercise-section active-section">
+        <h2>Travelling</h2>
+        <p>Enter your mode of transportation</p>
+        <input type="text" id="transportation-input" placeholder="e.g., bike, car, scooter...">
+        <img src="bike.png" alt="Transportation" class="vehicle-image" id="vehicle-image">
+    </section>
+
+    <!-- Color My Heart Section -->
+    <section id="picture-chooser" class="exercise-section">
+        <h2>Color My Heart</h2>
+        <div class="color-buttons">
+            <button class="color-button" style="background-color: #ff0000" onclick="changeColor('#ff0000')">Red</button>
+            <button class="color-button" style="background-color: #00ff00" onclick="changeColor('#00ff00')">Green</button>
+            <button class="color-button" style="background-color: #0000ff" onclick="changeColor('#0000ff')">Blue</button>
+        </div>
+        <div id="heart"></div>
+    </section>
+
+    <script>
+        // Menu Toggle
+        function toggleMenu() {
+            const navList = document.querySelector('.nav-list');
+            const toggleBtn = document.querySelector('.menu-toggle');
+            navList.classList.toggle('active');
+            toggleBtn.textContent = navList.classList.contains('active') ? '▲ Menu' : '▼ Menu';
+        }
+
+        // Show/Hide Sections
+        function showSection(sectionId) {
+            document.querySelectorAll('.exercise-section').forEach(section => {
+                section.classList.remove('active-section');
+            });
+            document.getElementById(sectionId).classList.add('active-section');
+            if (window.innerWidth < 768) toggleMenu();
+        }
+
+        // Exercise 1: Transportation Validation
+        document.getElementById('transportation-input').addEventListener('input', function(e) {
+            const validTransports = ['bike', 'scooter', 'car', 'skateboard'];
+            const input = e.target.value.toLowerCase().trim();
+            const image = document.getElementById('vehicle-image');
+            
+            if (validTransports.includes(input)) {
+                image.style.display = 'block';
+                image.src = `${input}.png`;
+            } else {
+                image.style.display = 'none';
+            }
+        });
+
+        // Exercise 2: Single Color Change Function
+        function changeColor(color) {
+            document.getElementById('heart').style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
