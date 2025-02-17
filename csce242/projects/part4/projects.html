@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Projects</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- You can add any additional styles or links to fonts here -->
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Creative Projects</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Projects Section -->
+    <h2 class="section-heading">Projects</h2>
+    <section id="projects-container">
+      <!-- Project 1 -->
+      <div class="assignment-card">
+        <h2>
+          <a href="projects/part1/ToolHub.pdf">Project 1</a>
+        </h2>
+        <a href="projects/part1/ToolHub.pdf" class="img-link">
+          <img src="images/project1.png" alt="Project 1 Screenshot">
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="assignment-card">
+        <h2>
+          <a href="projects/part2/index.html">Project 2</a>
+        </h2>
+        <a href="projects/part2/index.html" class="img-link">
+          <img src="images/project2.png" alt="Project 2 Screenshot">
+        </a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="assignment-card">
+        <h2>
+          <a href="projects/part3/index.html">Project 3</a>
+        </h2>
+        <a href="projects/part3/index.html" class="img-link">
+          <img src="images/part3.png" alt="Project 3 Screenshot">
+        </a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="assignment-card">
+        <h2>
+          <a href="projects/part4/index.html">Project 4</a>
+        </h2>
+        <a href="projects/part4/index.html" class="img-link">
+          <img src="images/project4.png" alt="Project 4 Screenshot">
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Creative Projects by Yuheng Zhu</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
