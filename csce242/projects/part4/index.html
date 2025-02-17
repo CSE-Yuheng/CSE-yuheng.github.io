@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Creative Studio | Yuheng Zhu</title>
+  <title>Creative Studio | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Creative Studio</div>
+      <div class="logo">
+        <img src="img/logo.png" alt="Creative Studio Logo" width="150">
+      </div>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="projects/part4/preview.html">Portfolio</a></li>
-        <li><a href="projects/part4/about.html">About</a></li>
-        <li><a href="projects/part4/contact.html">Contact</a></li>
+        <li><a href="preview.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="menu-toggle">
         <div class="bar"></div>
@@ -26,31 +28,30 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" style="background-image: url('img/hero-bg.jpg')">
       <div class="hero-content">
-        <h1>Digital Innovation & Creative Solutions</h1>
-        <p>Crafting memorable digital experiences through thoughtful design and cutting-edge technology</p>
+        <h1>Professional Digital Solutions</h1>
+        <p>Crafting exceptional web experiences through innovative design</p>
       </div>
     </section>
 
     <section class="projects">
       <h2>Featured Work</h2>
       <div class="project-grid">
-        <!-- Add Part 4 Project -->
         <div class="project-card">
-          <img src="projects/part4/images/project4.jpg" alt="Interactive Portfolio">
+          <img src="img/project-1.jpg" alt="Web Design Project" loading="lazy">
           <div class="card-content">
-            <h3>Interactive Portfolio</h3>
-            <p>Modern portfolio showcase with dynamic content loading and smooth animations</p>
-            <a href="projects/part4/preview.html" class="btn">View Project</a>
+            <h3>Modern Web Design</h3>
+            <p>Responsive website design with interactive elements</p>
           </div>
         </div>
+        <!-- Repeat for project-2 and project-3 -->
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Creative Studio. Crafted by Yuheng Zhu</p>
+    <p>&copy; 2025 Creative Studio. All rights reserved.</p>
   </footer>
 
   <script src="js/scripts.js"></script>
