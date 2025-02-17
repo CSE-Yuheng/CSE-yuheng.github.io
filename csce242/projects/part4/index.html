@@ -3,9 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Main 242 Home Page - Part 4</title>
+  <title>Main 242 Home Page - Improved Layout</title>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Homepage-specific styles for improved layout */
+    .section-heading {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      font-size: 2rem;
+      color: #333;
+    }
+    #projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem;
+    }
+    .assignment-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .assignment-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .assignment-card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .assignment-card a.img-link {
+      display: block;
+    }
+    .assignment-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -27,9 +67,7 @@
     <section id="projects-container">
       <!-- Project 1 -->
       <div class="assignment-card">
-        <h2>
-          <a href="projects/part1/ToolHub.pdf">Project 1</a>
-        </h2>
+        <h2><a href="projects/part1/ToolHub.pdf">Project 1</a></h2>
         <a href="projects/part1/ToolHub.pdf" class="img-link">
           <img src="images/project1.png" alt="Project 1 Screenshot">
         </a>
@@ -37,9 +75,7 @@
 
       <!-- Project 2 -->
       <div class="assignment-card">
-        <h2>
-          <a href="projects/part2/index.html">Project 2</a>
-        </h2>
+        <h2><a href="projects/part2/index.html">Project 2</a></h2>
         <a href="projects/part2/index.html" class="img-link">
           <img src="images/project2.png" alt="Project 2 Screenshot">
         </a>
@@ -47,9 +83,7 @@
 
       <!-- Project 3 -->
       <div class="assignment-card">
-        <h2>
-          <a href="projects/part3/index.html">Project 3</a>
-        </h2>
+        <h2><a href="projects/part3/index.html">Project 3</a></h2>
         <a href="projects/part3/index.html" class="img-link">
           <img src="images/part3.png" alt="Project 3 Screenshot">
         </a>
@@ -57,9 +91,7 @@
 
       <!-- Project 4 -->
       <div class="assignment-card">
-        <h2>
-          <a href="projects/part4/index.html">Project 4</a>
-        </h2>
+        <h2><a href="projects/part4/index.html">Project 4</a></h2>
         <a href="projects/part4/index.html" class="img-link">
           <img src="images/project4.png" alt="Project 4 Screenshot">
         </a>
@@ -80,5 +112,6 @@
   </script>
 </body>
 </html>
+
 
 
