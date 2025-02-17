@@ -3,57 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Creative Studio | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Main 242 Home Page - Part 4</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">
-        <img src="img/logo.png" alt="Creative Studio Logo" width="150">
-      </div>
+      <div class="logo">Innovative Web Design</div>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="preview.html">Portfolio</a></li>
+        <li><a href="preview.html">Preview</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="menu-toggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+      <div class="menu-toggle">&#9776;</div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" style="background-image: url('img/hero-bg.jpg')">
-      <div class="hero-content">
-        <h1>Professional Digital Solutions</h1>
-        <p>Crafting exceptional web experiences through innovative design</p>
-      </div>
+    <section class="hero">
+      <h1>Welcome to the Next Phase of Creativity</h1>
+      <p>Discover our latest project—a blend of modern aesthetics and flawless design.</p>
+      <a href="preview.html" class="btn">View Project</a>
     </section>
 
     <section class="projects">
-      <h2>Featured Work</h2>
+      <h2>Featured Projects</h2>
       <div class="project-grid">
+        <!-- Existing project cards -->
         <div class="project-card">
-          <img src="img/project-1.jpg" alt="Web Design Project" loading="lazy">
-          <div class="card-content">
-            <h3>Modern Web Design</h3>
-            <p>Responsive website design with interactive elements</p>
-          </div>
+          <img src="https://source.unsplash.com/600x400/?design" alt="Project One">
+          <h3>Project One</h3>
+          <p>An innovative approach to visual storytelling.</p>
         </div>
-        <!-- Repeat for project-2 and project-3 -->
+        <div class="project-card">
+          <img src="https://source.unsplash.com/600x400/?technology" alt="Project Two">
+          <h3>Project Two</h3>
+          <p>Cutting-edge design meets functionality.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://source.unsplash.com/600x400/?art" alt="Project Three">
+          <h3>Project Three</h3>
+          <p>A creative fusion of art and technology.</p>
+        </div>
+        <!-- New Part 4 card -->
+        <div class="project-card">
+          <img src="https://source.unsplash.com/600x400/?creative" alt="Project Part 4">
+          <h3>Project Part 4</h3>
+          <p>The latest evolution in our creative journey.</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Creative Studio. All rights reserved.</p>
+    <p>&copy; 2025 Innovative Web Design by Yuheng Zhu</p>
   </footer>
 
-  <script src="js/scripts.js"></script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
+
