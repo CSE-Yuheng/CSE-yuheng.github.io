@@ -8,24 +8,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* 1. CSS Variables for Theme */
+    /* CSS Variables for Theme */
     :root {
-      --primary: #2563eb;      /* Modern blue */
-      --secondary: #4f46e5;    /* Indigo accent */
-      --accent: #f472b6;       /* Soft pink for highlights */
-      --dark: #1e293b;         /* Deep navy */
-      --light: #f8fafc;        /* Off-white */
-      --gray: #64748b;         /* Medium gray */
+      --primary: #2563eb;
+      --secondary: #4f46e5;
+      --accent: #f472b6;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    /* 2. Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       color: var(--dark);
@@ -33,18 +27,16 @@
       background: var(--light);
       padding: 0;
     }
-
-    /* 3. Enhanced Header */
+    /* Header */
     #header {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       padding: 4rem 1rem 3rem;
       margin-bottom: 3rem;
       color: white;
+      text-align: center;
       position: relative;
       overflow: hidden;
-      text-align: center;
     }
-
     #header::after {
       content: '';
       position: absolute;
@@ -55,27 +47,14 @@
       background: var(--light);
       transform: skewY(-2deg);
     }
-
-    #header h1 {
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.25rem;
-    }
-
+    #header h1 { font-weight: 600; margin-bottom: 0.25rem; }
     #course-title {
       font-size: 2.25rem;
       font-weight: 700;
-      letter-spacing: -1px;
       margin-bottom: 0.5rem;
     }
-
-    #subtitle {
-      font-size: 1.1rem;
-      font-weight: 400;
-      opacity: 0.9;
-    }
-
-    /* 4. Card System */
+    #subtitle { font-size: 1.1rem; opacity: 0.9; }
+    /* Section Headings */
     .section-heading {
       text-align: center;
       font-size: 2rem;
@@ -84,7 +63,6 @@
       position: relative;
       color: var(--dark);
     }
-
     .section-heading::after {
       content: '';
       display: block;
@@ -94,7 +72,7 @@
       margin: 0.5rem auto;
       border-radius: 2px;
     }
-
+    /* Containers */
     #assignments-container,
     #projects-container {
       max-width: 1280px;
@@ -104,7 +82,7 @@
       gap: 2rem;
       padding: 0 1.5rem;
     }
-
+    /* Cards */
     .assignment-card {
       background: white;
       border-radius: 12px;
@@ -113,29 +91,23 @@
       transition: var(--transition);
       border: 1px solid rgba(0, 0, 0, 0.05);
       position: relative;
+      animation: fadeIn 0.6s ease forwards;
     }
-
     .assignment-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
-
     .assignment-card h2 {
       font-size: 1.15rem;
       margin-bottom: 1rem;
       color: var(--dark);
     }
-
     .assignment-card h2 a {
       color: inherit;
       text-decoration: none;
       transition: color 0.2s ease;
     }
-
-    .assignment-card h2 a:hover {
-      color: var(--primary);
-    }
-
+    .assignment-card h2 a:hover { color: var(--primary); }
     .assignment-card img {
       width: 100%;
       height: 180px;
@@ -144,45 +116,29 @@
       margin-bottom: 1.25rem;
       border: 1px solid rgba(0, 0, 0, 0.08);
     }
-
     .assignment-card .img-link {
       display: block;
       position: relative;
       overflow: hidden;
       border-radius: 8px;
     }
-
     .assignment-card .img-link::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.2);
       opacity: 0;
       transition: var(--transition);
     }
-
-    .assignment-card .img-link:hover::after {
-      opacity: 1;
-    }
-
-    /* 5. Projects Section Differentiation */
+    .assignment-card .img-link:hover::after { opacity: 1; }
+    /* Projects Cards Differentiation */
     #projects-container .assignment-card {
       background: var(--dark);
       border-color: rgba(255, 255, 255, 0.1);
     }
-
-    #projects-container .assignment-card h2 {
-      color: white;
-    }
-
-    #projects-container .assignment-card h2 a:hover {
-      color: var(--accent);
-    }
-
-    /* 6. Footer Styling */
+    #projects-container .assignment-card h2 { color: white; }
+    #projects-container .assignment-card h2 a:hover { color: var(--accent); }
+    /* Footer */
     #footer {
       text-align: center;
       margin-top: 4rem;
@@ -191,37 +147,18 @@
       color: rgba(255, 255, 255, 0.8);
       font-size: 0.9rem;
     }
-
-    /* 7. Responsive Design */
-    @media (max-width: 768px) {
-      #header {
-        padding: 3rem 1rem 2rem;
-      }
-
-      #course-title {
-        font-size: 1.75rem;
-      }
-
-      .section-heading {
-        font-size: 1.5rem;
-        margin: 3rem 0 1.5rem;
-      }
-
-      #assignments-container,
-      #projects-container {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-      }
-    }
-
-    /* 8. Subtle Animations */
+    /* Fade-in Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .assignment-card {
-      animation: fadeIn 0.6s ease forwards;
+    /* Responsive */
+    @media (max-width: 768px) {
+      #header { padding: 3rem 1rem 2rem; }
+      #course-title { font-size: 1.75rem; }
+      .section-heading { font-size: 1.5rem; margin: 3rem 0 1.5rem; }
+      #assignments-container,
+      #projects-container { grid-template-columns: 1fr; padding: 0 1rem; }
     }
   </style>
 </head>
@@ -241,111 +178,106 @@
       <!-- Assignment 1 -->
       <div class="assignment-card">
         <h2>
-          <a href="assignments/assignment1/index.html">Assignment 1 – Basic HTML</a>
+          <a href="/assignments/assignment1/index.html">Assignment 1 – Basic HTML</a>
         </h2>
-        <a href="assignments/assignment1/index.html" class="img-link">
-          <img src="images/bugatii.jpg" alt="Assignment 1 Screenshot"/>
+        <a href="/assignments/assignment1/index.html" class="img-link">
+          <img src="/images/bugatii.jpg" alt="Assignment 1 Screenshot"/>
         </a>
       </div>
 
       <!-- Assignment 2 -->
       <div class="assignment-card">
         <h2>
-          <a href="assignments/assignment2/index.html">Assignment 2 – Basic CSS</a>
+          <a href="/assignments/assignment2/index.html">Assignment 2 – Basic CSS</a>
         </h2>
-        <a href="assignments/assignment2/index.html" class="img-link">
-          <img src="images/gunback.jpg" alt="Assignment 2 Screenshot"/>
+        <a href="/assignments/assignment2/index.html" class="img-link">
+          <img src="/images/gunback.jpg" alt="Assignment 2 Screenshot"/>
         </a>
       </div>
 
       <!-- Assignment 3 -->
       <div class="assignment-card">
         <h2>
-          <a href="assignments/assignment3/index.html">Assignment 3 – Page Layout</a>
+          <a href="/assignments/assignment3/index.html">Assignment 3 – Page Layout</a>
         </h2>
-        <a href="assignments/assignment3/index.html" class="img-link">
-          <img src="images/layout.png" alt="Assignment 3 Screenshot"/>
+        <a href="/assignments/assignment3/index.html" class="img-link">
+          <img src="/images/layout.png" alt="Assignment 3 Screenshot"/>
         </a>
       </div>
 
       <!-- Assignment 4 -->
       <div class="assignment-card">
         <h2>
-          <a href="assignments/assignment4/index.html">Assignment 4 – Recreate CSS</a>
+          <a href="/assignments/assignment4/index.html">Assignment 4 – Recreate CSS</a>
         </h2>
-        <a href="assignments/assignment4/index.html" class="img-link">
-          <img src="images/assignment4.png" alt="Assignment 4 Screenshot"/>
+        <a href="/assignments/assignment4/index.html" class="img-link">
+          <img src="/images/assignment4.png" alt="Assignment 4 Screenshot"/>
         </a>
       </div>
 
-       <!-- Assignment 5 -->
+      <!-- Assignment 5 -->
       <div class="assignment-card">
         <h2>
-          <a href="assignments/assignment5/index.html">Assignment 5 – Introduction to JavaScript</a>
+          <a href="/assignments/assignment5/index.html">Assignment 5 – Introduction to JavaScript</a>
         </h2>
-        <a href="assignments/assignment5/index.html" class="img-link">
-          <img src="images/assignment5.png" alt="Assignment 5 Screenshot"/>
+        <a href="/assignments/assignment5/index.html" class="img-link">
+          <img src="/images/assignment5.png" alt="Assignment 5 Screenshot"/>
         </a>
       </div>
 
-<!-- Assignment 6 -->
+      <!-- Assignment 6 -->
       <div class="assignment-card">
         <h2>
-          <a href="assignments/assignment6/index.html">Assignment 6 – If Statements</a>
+          <a href="/assignments/assignment6/index.html">Assignment 6 – If Statements</a>
         </h2>
-        <a href="assignments/assignment6/index.html" class="img-link">
-          <img src="images/assignment6.png" alt="Assignment 6 Screenshot"/>
+        <a href="/assignments/assignment6/index.html" class="img-link">
+          <img src="/images/assignment6.png" alt="Assignment 6 Screenshot"/>
         </a>
       </div>
-      
     </section>
 
     <!-- Projects Section -->
     <h2 class="section-heading">Projects</h2>
     <section id="projects-container">
       <!-- Project 1 -->
-
       <div class="assignment-card">
-  <h2>
-    <a href="projects/part1/ToolHub.pdf">Project 1</a>
-  </h2>
-  <a href="projects/part1/ToolHub.pdf" class="img-link">
-    <img src="images/project1.png" 
-         alt="Project 1 Screenshot"
-         >
-  </a>
-</div>
+        <h2>
+          <a href="/projects/part1/ToolHub.pdf">Project 1</a>
+        </h2>
+        <a href="/projects/part1/ToolHub.pdf" class="img-link">
+          <img src="/images/project1.png" alt="Project 1 Screenshot"/>
+        </a>
+      </div>
 
       <!-- Project 2 -->
       <div class="assignment-card">
         <h2>
-          <a href="projects/part2/index.html">Project 2</a>
+          <a href="/projects/part2/index.html">Project 2</a>
         </h2>
-        <a href="projects/part2/index.html" class="img-link">
-          <img src="images/project2.jpeg" alt="Project 2 Screenshot"/>
+        <a href="/projects/part2/index.html" class="img-link">
+          <img src="/images/project2.jpeg" alt="Project 2 Screenshot"/>
         </a>
       </div>
 
       <!-- Project 3 -->
       <div class="assignment-card">
         <h2>
-          <a href="projects/part3/index.html">Project 3</a>
+          <a href="/projects/part3/index.html">Project 3</a>
         </h2>
-        <a href="projects/part3/index.html" class="img-link">
-          <img src="images/part3.png" alt="Project 3 Screenshot"/>
+        <a href="/projects/part3/index.html" class="img-link">
+          <img src="/images/part3.png" alt="Project 3 Screenshot"/>
         </a>
       </div>
 
-  <!-- Project 4 -->
+      <!-- Project 4 -->
       <div class="assignment-card">
         <h2>
-          <a href="projects/part4/index.html">Project 4</a>
+          <a href="/projects/part4/index.html">Project 4</a>
         </h2>
-        <a href="projects/part4/index.html" class="img-link">
-          <img src="images/project4.png" alt="Project 4 Screenshot"/>
+        <a href="/projects/part4/index.html" class="img-link">
+          <img src="/images/project4.png" alt="Project 4 Screenshot"/>
         </a>
       </div>
-      
     </section>
   </main>
 
