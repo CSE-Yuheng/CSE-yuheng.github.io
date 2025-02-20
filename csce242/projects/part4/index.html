@@ -4,16 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Main 242 Home Page - Improved Layout</title>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* Homepage-specific styles for improved layout */
+    /* 1. Color Scheme & Base Styles */
+    :root {
+      --primary: #2563eb;       /* Modern blue */
+      --secondary: #4f46e5;     /* Indigo accent */
+      --accent: #f472b6;        /* Soft pink for highlights */
+      --dark: #1e293b;          /* Deep navy */
+      --light: #f8fafc;         /* Off-white */
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* 2. Enhanced Header & Navigation */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 1rem 1.5rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-family: 'Lobster', cursive;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+    .nav-links li {
+      margin-left: 1.5rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    /* Hamburger Menu for Smaller Screens */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 1rem;
+        min-width: 150px;
+        border-radius: 4px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* 3. Section Heading */
     .section-heading {
       text-align: center;
       margin: 2rem 0 1rem;
       font-size: 2rem;
       color: #333;
     }
+
+    /* 4. Project Cards Layout */
     #projects-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -22,6 +109,7 @@
       margin: 0 auto;
       padding: 0 1rem 2rem;
     }
+
     .assignment-card {
       background: #fff;
       padding: 1rem;
@@ -36,14 +124,29 @@
     .assignment-card h2 {
       margin-bottom: 1rem;
       font-size: 1.5rem;
+      color: var(--dark);
+      transition: var(--transition);
     }
-    .assignment-card a.img-link {
-      display: block;
+    .assignment-card h2 a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .assignment-card h2 a:hover {
+      color: var(--primary);
     }
     .assignment-card img {
       width: 100%;
       height: auto;
       border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    /* 5. Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: var(--dark);
+      color: #fff;
     }
   </style>
 </head>
@@ -67,33 +170,41 @@
     <section id="projects-container">
       <!-- Project 1 -->
       <div class="assignment-card">
-        <h2><a href="projects/part1/ToolHub.pdf">Project 1</a></h2>
-    
-          <img src="images/project1.png" alt="Project 1 Screenshot">
+        <h2>
+          <a href="projects/part1/ToolHub.pdf">Project 1</a>
+        </h2>
+        <a href="projects/part1/ToolHub.pdf">
+          <img src="images/project1.png" alt="Project 1 Screenshot" />
         </a>
       </div>
 
       <!-- Project 2 -->
       <div class="assignment-card">
-        <h2><a href="projects/part2/index.html">Project 2</a></h2>
-        
-          <img src="images/project2.png" alt="Project 2 Screenshot">
+        <h2>
+          <a href="projects/part2/index.html">Project 2</a>
+        </h2>
+        <a href="projects/part2/index.html">
+          <img src="images/project2.png" alt="Project 2 Screenshot" />
         </a>
       </div>
 
       <!-- Project 3 -->
       <div class="assignment-card">
-        <h2><a href="projects/part3/index.html">Project 3</a></h2>
-       
-          <img src="images/part3.png" alt="Project 3 Screenshot">
+        <h2>
+          <a href="projects/part3/index.html">Project 3</a>
+        </h2>
+        <a href="projects/part3/index.html">
+          <img src="images/part3.png" alt="Project 3 Screenshot" />
         </a>
       </div>
 
       <!-- Project 4 -->
       <div class="assignment-card">
-        <h2><a href="projects/part4/index.html">Project 4</a></h2>
-       
-          <img src="images/project4.png" alt="Project 4 Screenshot">
+        <h2>
+          <a href="projects/part4/index.html">Project 4</a>
+        </h2>
+        <a href="projects/part4/index.html">
+          <img src="images/project4.png" alt="Project 4 Screenshot" />
         </a>
       </div>
     </section>
