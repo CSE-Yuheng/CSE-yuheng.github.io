@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 7 - For Loops</title>
+  <style>
+    body {
+      background-color: #FAF9F6; /* Light background */
+      color: #557C9E;           /* Main font color */
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-top: 50px;
+      color: #557C9E;
+    }
+    h2 {
+      margin-top: 20px;
+      color: #E67A90;
+    }
+
+    /* Container for the stairs and stick figure */
+    #stairContainer {
+      margin: 20px auto;
+      position: relative;
+      width: 100px; /* adjust to your liking */
+      height: 0;    /* will expand when we add treads */
+    }
+
+    /* Each stair is just a rectangle (a <div>) */
+    .stair {
+      width: 100%;
+      height: 20px;             /* height of each tread */
+      border-left: 4px solid black;
+      border-right: 4px solid black;
+      border-bottom: 4px solid black;
+      box-sizing: border-box;   /* keep borders inside the box */
+    }
+
+    /* The stick figure image positioned absolutely over the stairs */
+    #stickFigure {
+      position: absolute;
+      left: 25px;    /* horizontal offset so it appears on the ladder */
+      display: none; /* hidden until stairs are drawn */
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #eee;
+    }
+
+    #footer {
+      margin-top: 50px;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Assignment 9</h1>
+  <h2>For Loops</h2>
+
+  <button id="drawStairsBtn">Draw Stairs</button>
+  <div id="stairContainer"></div>
+  <button id="climbStairsBtn" style="display: none;">Climb Stairs</button>
+
+  <div id="footer">@portiaplante.com</div>
+
+  <script>
+    const stairContainer = document.getElementById("stairContainer");
+    const drawStairsBtn = document.getElementById("drawStairsBtn");
+    const climbStairsBtn = document.getElementById("climbStairsBtn");
+
+    // Create the stick figure <img> and append it once (we’ll just show/hide it)
+    const stickFigure = document.createElement("img");
+    stickFigure.id = "stickFigure";
+    // Default to the left-foot-up image; you can also start with right.png
+    stickFigure.src = "left.png"; 
+    stairContainer.appendChild(stickFigure);
+
+    let currentStep = 0;    // Track which step the figure is on
+    let climbInterval = null;
+
+    // When the user clicks "Draw Stairs"
+    drawStairsBtn.addEventListener("click", () => {
+      // Clear any previous stairs
+      stairContainer.innerHTML = "";
+
+      // Re-append the stickFigure so we don’t lose it
+      stairContainer.appendChild(stickFigure);
+
+      // Create 10 treads with a for loop
+      for (let i = 0; i < 10; i++) {
+        const tread = document.createElement("div");
+        tread.classList.add("stair");
+        // Append from top to bottom, or bottom to top—your choice
+        stairContainer.appendChild(tread);
+      }
+
+      // Show the climb button
+      climbStairsBtn.style.display = "inline-block";
+
+      // Reset position to bottom step
+      currentStep = 0;
+      stickFigure.style.display = "block";
+      stickFigure.style.left = "25px";
+      // Each tread is 20px high; step 0 means at the bottom (which is step index 9)
+      stickFigure.style.top = (20 * 9) + "px"; 
+      stickFigure.src = "left.png"; // Reset the image
+    });
+
+    // When the user clicks "Climb Stairs"
+    climbStairsBtn.addEventListener("click", () => {
+      // If we click multiple times, ensure only one interval runs
+      if (climbInterval) clearInterval(climbInterval);
+
+      let usingLeftImg = true; // to toggle foot images
+
+      climbInterval = setInterval(() => {
+        currentStep++;
+        if (currentStep <= 9) {
+          // Move from bottom to top: top position is 20 * (9 - currentStep)
+          stickFigure.style.top = (20 * (9 - currentStep)) + "px";
+          // Toggle the image
+          stickFigure.src = usingLeftImg ? "right.png" : "left.png";
+          usingLeftImg = !usingLeftImg;
+        } else {
+          // Once we've climbed all 10 steps, stop
+          clearInterval(climbInterval);
+          climbInterval = null;
+        }
+      }, 500); // climb speed in ms
+    });
+  </script>
+</body>
+</html>
