@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Test – Titles Only</title>
+</head>
+<body>
+
+<h1>Assignment 10</h1>
+<h2>Arrays</h2>
+
+<div id="titles"></div>
+
+<script>
+  // Just an array of strings (titles). No images.
+  const titles = ["Happy Birthday", "Crazy Clown", "It's Raining", "Quiet Time", "Working Hard", "Work from Home"];
+
+  const titlesContainer = document.getElementById('titles');
+  console.log("titlesContainer is:", titlesContainer); 
+  // This should not be null if #titles is in your HTML.
+
+  // Test script is running
+  console.log("Script is running - we will now loop through titles.");
+
+  titles.forEach(title => {
+    // Create a simple <div> for each
+    const div = document.createElement('div');
+    div.textContent = title;
+    div.style.margin = "10px 0";
+    div.style.cursor = "pointer";
+    // Append to #titles
+    titlesContainer.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
