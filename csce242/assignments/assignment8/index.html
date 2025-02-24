@@ -38,17 +38,17 @@
     /* Popup styling */
     #popup {
       position: fixed;
-      top: 50%; 
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); /* Center in the window */
-      background-color: #FFF9F0;       /* slightly off-white */
+      transform: translate(-50%, -50%);
+      background-color: #FFF9F0;  /* slightly off-white */
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       width: 300px;
       max-width: 80%;
       padding: 20px;
       z-index: 9999;
-      display: none;                  /* hidden by default */
-      border: 10px solid #F4CACE;     /* pinkish border behind popup */
+      display: none;             /* hidden by default */
+      border: 10px solid #F4CACE; /* pinkish border behind popup */
     }
     #popup h3 {
       margin: 0;
@@ -59,11 +59,11 @@
       margin: 20px 0;
     }
 
-    /* Close button in top-right corner */
+    /* Close button */
     #close {
       color: #E67A90;
       font-size: 20px;
-      float: right; 
+      float: right;
       cursor: pointer;
       margin-top: -20px;
       margin-right: -10px;
@@ -89,7 +89,7 @@
   <h1>Assignment 10</h1>
   <h2>Arrays</h2>
 
-  <!-- Container where we will list the titles from our array -->
+  <!-- Container for the titles -->
   <div id="titles"></div>
 
   <!-- Popup (hidden initially) -->
@@ -99,7 +99,7 @@
     <img id="popupImg" src="" alt="Popup Image" />
   </div>
 
-  <!-- Image credit section -->
+  <!-- Image credit -->
   <section id="credit">
     Image by 
     <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20832062.htm#query=stick%20figure%20run&position=46&from_view=search&track=ais&uuid=22e87991-ee06-4dc2-8ea3-464d535e1a63"
@@ -109,14 +109,16 @@
   </section>
 
   <script>
-    // Our data: array of objects, each with a title and image file
+    // Our data: array of objects, each with a title and image file.
+    // Notice the path: ../assignment8/images/birthday.jpg
+    // Goes UP one folder (..), then into assignment8/images/
     const pictures = [
-      { title: 'Happy Birthday',  img: 'images/birthday.jpg' },
-      { title: 'Crazy Clown',     img: 'images/clown.jpg' },
-      { title: \"It's Raining\",  img: 'images/rain.jpg' },
-      { title: 'Quiet Time',      img: 'images/read.jpg' },
-      { title: 'Working Hard',    img: 'images/shovel.jpg' },
-      { title: 'Work from Home',  img: 'images/home.jpg' }
+      { title: 'Happy Birthday',  img: '../assignment8/images/birthday.jpg' },
+      { title: 'Crazy Clown',     img: '../assignment8/images/clown.jpg' },
+      { title: \"It's Raining\",  img: '../assignment8/images/rain.jpg' },
+      { title: 'Quiet Time',      img: '../assignment8/images/read.jpg' },
+      { title: 'Working Hard',    img: '../assignment8/images/shovel.jpg' },
+      { title: 'Work from Home',  img: '../assignment8/images/work.jpg' }
     ];
 
     // Grab references
@@ -132,11 +134,11 @@
       titleDiv.className = 'titleItem';
       titleDiv.textContent = item.title;
 
-      // Clicking the title => show popup
+      // When clicking a title => show popup
       titleDiv.addEventListener('click', () => {
         popupTitle.textContent = item.title;
         popupImg.src = item.img;
-        popup.style.display = 'block'; // show the popup
+        popup.style.display = 'block'; // show popup
       });
 
       titlesContainer.appendChild(titleDiv);
@@ -147,6 +149,6 @@
       popup.style.display = 'none';
     });
   </script>
-
 </body>
 </html>
+
