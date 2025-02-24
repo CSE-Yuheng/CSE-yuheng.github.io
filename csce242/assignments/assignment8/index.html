@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 10 - Arrays</title>
+  <style>
+    /* Basic page styling */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FAF9F6; /* light background */
+      font-family: sans-serif;
+      text-align: center;
+      color: #557C9E; /* main font color */
+    }
+    h1 {
+      margin-top: 50px;
+    }
+    h2 {
+      color: #E67A90;
+    }
+
+    /* Container for the list of titles */
+    #titles {
+      margin-top: 30px;
+    }
+    /* Each clickable title item */
+    .titleItem {
+      cursor: pointer;
+      margin: 10px 0;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    .titleItem:hover {
+      color: #E67A90;
+    }
+
+    /* Popup styling */
+    #popup {
+      position: fixed;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center in the window */
+      background-color: #FFF9F0;       /* slightly off-white */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      width: 300px;
+      max-width: 80%;
+      padding: 20px;
+      z-index: 9999;
+      display: none;                  /* hidden by default */
+      border: 10px solid #F4CACE;     /* pinkish border behind popup */
+    }
+    #popup h3 {
+      margin: 0;
+      color: #E67A90;
+    }
+    #popup img {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+
+    /* Close button in top-right corner */
+    #close {
+      color: #E67A90;
+      font-size: 20px;
+      float: right; 
+      cursor: pointer;
+      margin-top: -20px;
+      margin-right: -10px;
+    }
+    #close:hover {
+      color: #D63A60;
+    }
+
+    /* Footer credit */
+    #credit {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #AAA;
+    }
+    #credit a {
+      color: #E67A90;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Assignment 10</h1>
+  <h2>Arrays</h2>
+
+  <!-- Container where we will list the titles from our array -->
+  <div id="titles"></div>
+
+  <!-- Popup (hidden initially) -->
+  <div id="popup">
+    <span id="close">&#10006;</span>
+    <h3 id="popupTitle"></h3>
+    <img id="popupImg" src="" alt="Popup Image" />
+  </div>
+
+  <!-- Image credit section -->
+  <section id="credit">
+    Image by 
+    <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20832062.htm#query=stick%20figure%20run&position=46&from_view=search&track=ais&uuid=22e87991-ee06-4dc2-8ea3-464d535e1a63"
+       target="_blank" rel="noopener noreferrer">
+      Freepik
+    </a>
+  </section>
+
+  <script>
+    // Our data: array of objects, each with a title and image file
+    const pictures = [
+      { title: 'Happy Birthday',  img: 'images/happy-birthday.png' },
+      { title: 'Crazy Clown',     img: 'images/crazy-clown.png' },
+      { title: \"It's Raining\",  img: 'images/its-raining.png' },
+      { title: 'Quiet Time',      img: 'images/quiet-time.png' },
+      { title: 'Working Hard',    img: 'images/working-hard.png' },
+      { title: 'Work from Home',  img: 'images/work-from-home.png' }
+    ];
+
+    // Grab references
+    const titlesContainer = document.getElementById('titles');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('close');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupImg = document.getElementById('popupImg');
+
+    // On page load, loop through pictures, create clickable titles
+    pictures.forEach(item => {
+      const titleDiv = document.createElement('div');
+      titleDiv.className = 'titleItem';
+      titleDiv.textContent = item.title;
+
+      // Clicking the title => show popup
+      titleDiv.addEventListener('click', () => {
+        popupTitle.textContent = item.title;
+        popupImg.src = item.img;
+        popup.style.display = 'block'; // show the popup
+      });
+
+      titlesContainer.appendChild(titleDiv);
+    });
+
+    // Close button => hide popup
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
