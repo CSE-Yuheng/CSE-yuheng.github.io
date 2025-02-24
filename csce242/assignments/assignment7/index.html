@@ -41,10 +41,11 @@
 
     /* The stick figure image positioned absolutely over the stairs */
     #stickFigure {
-      position: absolute;
-      left: 25px;    /* horizontal offset so it appears on the ladder */
-      display: none; /* hidden until stairs are drawn */
-    }
+  position: absolute;
+  left: 50%;               /* Put the figure’s left edge at the container’s 50% mark */
+  transform: translateX(-50%); /* Shift left half the figure’s width, so it’s centered */
+  /* top: ... set your vertical position */
+
 
     button {
       padding: 10px 20px;
