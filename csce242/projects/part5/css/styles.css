@@ -1,0 +1,165 @@
+/* css/styles.css */
+
+/* -------------------- Basic Reset & Box Sizing -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------- Typography & Colors -------------------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+h1, h2, h3 {
+  font-family: 'Lobster', cursive;
+  color: #111;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------- Header, Nav, & Mobile Toggle -------------------- */
+header {
+  margin-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f2a365; /* highlight color from your existing scheme */
+}
+
+.nav-links li .active {
+  color: #f2a365; /* highlight for active page */
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* hidden on desktop */
+}
+
+/* Mobile Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 56px; /* nav's height */
+    right: 0;
+    background: #222;
+    flex-direction: column;
+    width: 50%;
+    max-width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding-top: 1rem;
+  }
+  .nav-links.active {
+    transform: translateX(0%);
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+  background: #f2a365; /* from existing color scheme */
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Button Style in Hero */
+.btn {
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3px;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: #333;
+}
+
+/* -------------------- Projects & Grids -------------------- */
+.projects {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #30475e; /* from existing scheme */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
