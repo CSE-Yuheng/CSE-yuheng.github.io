@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project Website</title>
+    <!--
+      Replace or add your favorite fonts here, if desired.
+      For example, Google Fonts:
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    -->
+    <style>
+      /* Basic reset and box sizing */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        /* Customizable Color Scheme */
+        --primary-color: #30475e;       /* A tasteful navy-gray mix */
+        --secondary-color: #f2a365;     /* A soft orange accent */
+        --accent-color: #ececec;        /* Light gray for subtle highlights */
+        --text-color: #333;            /* Primary text color */
+        --light-bg: #fff;              /* Light background */
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: var(--text-color);
+        background-color: var(--light-bg);
+        line-height: 1.6;
+      }
+
+      /* ====================== NAVIGATION ====================== */
+      nav {
+        width: 100%;
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        position: relative;
+      }
+
+      .nav-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Hamburger menu icon (mobile) */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: all 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          display: none;
+          flex-direction: column;
+          background-color: var(--primary-color);
+          text-align: center;
+        }
+        .nav-links a {
+          padding: 1rem;
+          border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        .nav-links.show {
+          display: flex;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      /* ====================== HEADER ====================== */
+      header {
+        text-align: center;
+        padding: 2rem 1rem;
+        background-color: var(--secondary-color);
+        color: #fff;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      /* ====================== MAIN SECTIONS ====================== */
+      section {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      section p {
+        margin-bottom: 1rem;
+      }
+
+      /* Image Gallery Example */
+      .images {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .images img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        border: 1px solid #ccc;
+      }
+
+      /* ====================== FOOTER ====================== */
+      footer {
+        background-color: var(--primary-color);
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      /* ====================== MEDIA QUERIES ====================== */
+      @media (max-width: 576px) {
+        header h1 {
+          font-size: 1.75rem;
+        }
+        section h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ====================== NAVBAR ====================== -->
+    <nav>
+      <a href="#" class="nav-brand">MyProject Logo</a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ====================== HEADER ====================== -->
+    <header>
+      <h1>Welcome to My Final Project</h1>
+      <p>
+        Incorporating all feedback from my instructor, TA, and classmates to present
+        a polished, responsive, and visually appealing website.
+      </p>
+    </header>
+
+    <!-- ====================== HOME SECTION ====================== -->
+    <section id="home">
+      <h2>Home</h2>
+      <p>
+        This is the home section of our website, where we introduce the main
+        purpose and context of the project. Feel free to explore the gallery,
+        learn more about our background in the About section, or get in touch
+        via the Contact page.
+      </p>
+      <p>
+        Our color scheme was chosen to match the overall brand aesthetic: a
+        deep primary color, a lighter accent, and a warm highlight that resonates
+        with our logo.
+      </p>
+    </section>
+
+    <!-- ====================== GALLERY SECTION ====================== -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>
+        Below, you’ll find a collection of images that visually represent our
+        work. All images are professionally sourced or are license-free stock
+        photos. Please ensure any images you use are properly credited.
+      </p>
+      <div class="images">
+        <!-- Replace these placeholders with your own images if available -->
+        <img src="https://via.placeholder.com/600x400" alt="Project Preview 1" />
+        <img src="https://via.placeholder.com/600x400" alt="Project Preview 2" />
+        <img src="https://via.placeholder.com/600x400" alt="Project Preview 3" />
+        <img src="https://via.placeholder.com/600x400" alt="Project Preview 4" />
+      </div>
+    </section>
+
+    <!-- ====================== ABOUT SECTION ====================== -->
+    <section id="about">
+      <h2>About This Project</h2>
+      <p>
+        This project is the culmination of multiple iterations and valuable input
+        from instructors, TAs, and peers. Our goal was to create an intuitive,
+        accessible, and professional platform that effectively communicates our
+        purpose.
+      </p>
+      <p>
+        We have utilized HTML, CSS, and media queries to ensure that everything
+        scales well across different devices, from desktop to mobile.
+      </p>
+      <p>
+        The final look follows a clean and consistent design approach, complete
+        with a fully functional hamburger menu on smaller screens. No text runs
+        offscreen, and no images stretch unproportionally.
+      </p>
+    </section>
+
+    <!-- ====================== CONTACT SECTION ====================== -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>
+        Have questions or feedback? We’d love to hear from you!
+      </p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:info@myproject.com">info@myproject.com</a></li>
+        <li><strong>Location:</strong> 123 Main Street, City, Country</li>
+        <li><strong>Phone:</strong> (123) 456-7890</li>
+      </ul>
+    </section>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer>
+      <p>&copy; 2025 MyProject. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Toggle navigation on mobile
+      function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('show');
+      }
+    </script>
+  </body>
+</html>
