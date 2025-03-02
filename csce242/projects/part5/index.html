@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Final Project Website</title>
+    <title>Refined Final Project Website</title>
     <!--
-      Replace or add your favorite fonts here, if desired.
-      For example, Google Fonts:
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+      Feel free to replace or add your favorite fonts.
+      Example for Google Fonts:
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      />
     -->
     <style>
-      /* Basic reset and box sizing */
+      /* Reset and box sizing */
       * {
         margin: 0;
         padding: 0;
@@ -19,23 +22,24 @@
 
       :root {
         /* Customizable Color Scheme */
-        --primary-color: #30475e;       /* A tasteful navy-gray mix */
+        --primary-color: #30475e;       /* A sophisticated navy-gray mix */
         --secondary-color: #f2a365;     /* A soft orange accent */
         --accent-color: #ececec;        /* Light gray for subtle highlights */
+        --background-color: #fafafa;    /* Very light gray background */
         --text-color: #333;            /* Primary text color */
-        --light-bg: #fff;              /* Light background */
+        --heading-font: 'Poppins', sans-serif; /* Example custom font */
+        --body-font: 'Arial', sans-serif;       /* Fallback body font */
       }
 
       body {
-        font-family: Arial, sans-serif;
+        font-family: var(--body-font);
+        background-color: var(--background-color);
         color: var(--text-color);
-        background-color: var(--light-bg);
         line-height: 1.6;
       }
 
       /* ====================== NAVIGATION ====================== */
       nav {
-        width: 100%;
         background-color: var(--primary-color);
         display: flex;
         justify-content: space-between;
@@ -45,15 +49,16 @@
       }
 
       .nav-brand {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-weight: bold;
         color: #fff;
         text-decoration: none;
+        font-family: var(--heading-font);
       }
 
       .nav-links {
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
       }
 
       .nav-links a {
@@ -64,7 +69,7 @@
       }
 
       .nav-links a:hover {
-        color: var(--accent-color);
+        color: var(--secondary-color);
       }
 
       /* Hamburger menu icon (mobile) */
@@ -108,18 +113,22 @@
       /* ====================== HEADER ====================== */
       header {
         text-align: center;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
         background-color: var(--secondary-color);
         color: #fff;
+        position: relative;
       }
 
       header h1 {
-        font-size: 2.5rem;
+        font-family: var(--heading-font);
+        font-size: 3rem;
         margin-bottom: 1rem;
       }
 
       header p {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       /* ====================== MAIN SECTIONS ====================== */
@@ -133,25 +142,113 @@
         font-size: 2rem;
         margin-bottom: 1rem;
         color: var(--primary-color);
+        font-family: var(--heading-font);
       }
 
       section p {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
       }
 
-      /* Image Gallery Example */
+      /* ====================== HOME SECTION ====================== */
+      #home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      #home img {
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+        border: 2px solid #ccc;
+        margin-bottom: 1.5rem;
+      }
+
+      /* ====================== GALLERY SECTION ====================== */
+      #gallery {
+        background-color: var(--accent-color);
+        border-radius: 8px;
+      }
+
+      #gallery p {
+        text-align: center;
+      }
+
       .images {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1rem;
+        margin-top: 1rem;
       }
 
       .images img {
         width: 100%;
         height: auto;
         object-fit: cover;
-        display: block;
-        border: 1px solid #ccc;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      /* ====================== ABOUT SECTION ====================== */
+      #about {
+        background-color: #fff;
+        margin-top: 2rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 2rem;
+      }
+
+      #about p {
+        margin-bottom: 1rem;
+      }
+
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .about-content img {
+        width: 350px;
+        max-width: 100%;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      /* ====================== CONTACT SECTION ====================== */
+      #contact {
+        margin-top: 2rem;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 1rem;
+      }
+
+      .contact-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .contact-card h3 {
+        margin-bottom: 1rem;
+        font-family: var(--heading-font);
+        color: var(--primary-color);
+      }
+
+      .contact-card p {
+        margin-bottom: 0.5rem;
       }
 
       /* ====================== FOOTER ====================== */
@@ -159,13 +256,36 @@
         background-color: var(--primary-color);
         color: #fff;
         text-align: center;
-        padding: 1rem;
+        padding: 1.5rem;
+        margin-top: 2rem;
       }
 
-      /* ====================== MEDIA QUERIES ====================== */
+      footer p {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+
+      .footer-social a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+
+      .footer-social a:hover {
+        color: var(--secondary-color);
+      }
+
+      /* ====================== RESPONSIVE DESIGN ====================== */
       @media (max-width: 576px) {
         header h1 {
-          font-size: 1.75rem;
+          font-size: 2rem;
         }
         section h2 {
           font-size: 1.5rem;
@@ -177,7 +297,7 @@
   <body>
     <!-- ====================== NAVBAR ====================== -->
     <nav>
-      <a href="#" class="nav-brand">MyProject Logo</a>
+      <a href="#home" class="nav-brand">MyRefinedProject</a>
       <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -193,82 +313,135 @@
 
     <!-- ====================== HEADER ====================== -->
     <header>
-      <h1>Welcome to My Final Project</h1>
+      <h1>Your Project, Perfected</h1>
       <p>
-        Incorporating all feedback from my instructor, TA, and classmates to present
-        a polished, responsive, and visually appealing website.
+        We’ve refined our site to deliver a polished, beautiful, and responsive
+        experience that incorporates feedback from all sides.
       </p>
     </header>
 
     <!-- ====================== HOME SECTION ====================== -->
     <section id="home">
-      <h2>Home</h2>
+      <h2>Welcome to Our Final Iteration</h2>
+      <img
+        src="https://via.placeholder.com/600x400?text=Your+Hero+Image+Here"
+        alt="Placeholder Hero"
+      />
       <p>
-        This is the home section of our website, where we introduce the main
-        purpose and context of the project. Feel free to explore the gallery,
-        learn more about our background in the About section, or get in touch
-        via the Contact page.
+        This home section gives visitors a first impression of our project.
+        We’ve chosen a balanced color palette and fonts that are easy to read.
       </p>
       <p>
-        Our color scheme was chosen to match the overall brand aesthetic: a
-        deep primary color, a lighter accent, and a warm highlight that resonates
-        with our logo.
+        Take a moment to explore the Gallery, learn more in our About section,
+        or get in touch via the Contact page. Scroll down for more.
       </p>
     </section>
 
     <!-- ====================== GALLERY SECTION ====================== -->
     <section id="gallery">
-      <h2>Gallery</h2>
+      <h2>Our Featured Gallery</h2>
       <p>
-        Below, you’ll find a collection of images that visually represent our
-        work. All images are professionally sourced or are license-free stock
-        photos. Please ensure any images you use are properly credited.
+        A curated collection of visuals representing our work. All images are
+        free for commercial use, ensuring no copyright issues.
       </p>
       <div class="images">
-        <!-- Replace these placeholders with your own images if available -->
-        <img src="https://via.placeholder.com/600x400" alt="Project Preview 1" />
-        <img src="https://via.placeholder.com/600x400" alt="Project Preview 2" />
-        <img src="https://via.placeholder.com/600x400" alt="Project Preview 3" />
-        <img src="https://via.placeholder.com/600x400" alt="Project Preview 4" />
+        <!-- Replace these placeholders with your own images -->
+        <img
+          src="https://via.placeholder.com/400x300?text=Project+Preview+1"
+          alt="Gallery Item 1"
+        />
+        <img
+          src="https://via.placeholder.com/400x300?text=Project+Preview+2"
+          alt="Gallery Item 2"
+        />
+        <img
+          src="https://via.placeholder.com/400x300?text=Project+Preview+3"
+          alt="Gallery Item 3"
+        />
+        <img
+          src="https://via.placeholder.com/400x300?text=Project+Preview+4"
+          alt="Gallery Item 4"
+        />
+        <img
+          src="https://via.placeholder.com/400x300?text=Project+Preview+5"
+          alt="Gallery Item 5"
+        />
       </div>
+      <p style="text-align:center; margin-top: 1.5rem;">
+        Want to see more? Check out our <a href="#home" style="color: var(--primary-color); text-decoration: underline;">Home</a>
+        or <a href="#about" style="color: var(--primary-color); text-decoration: underline;">About</a> sections.
+      </p>
     </section>
 
     <!-- ====================== ABOUT SECTION ====================== -->
     <section id="about">
-      <h2>About This Project</h2>
-      <p>
-        This project is the culmination of multiple iterations and valuable input
-        from instructors, TAs, and peers. Our goal was to create an intuitive,
-        accessible, and professional platform that effectively communicates our
-        purpose.
-      </p>
-      <p>
-        We have utilized HTML, CSS, and media queries to ensure that everything
-        scales well across different devices, from desktop to mobile.
-      </p>
-      <p>
-        The final look follows a clean and consistent design approach, complete
-        with a fully functional hamburger menu on smaller screens. No text runs
-        offscreen, and no images stretch unproportionally.
-      </p>
+      <h2>About Our Project</h2>
+      <div class="about-content">
+        <img
+          src="https://via.placeholder.com/350x250?text=Teamwork+Image"
+          alt="Teamwork"
+        />
+        <div class="about-text">
+          <p>
+            After numerous rounds of feedback from instructors, TAs, and
+            classmates, we’ve arrived at a final design that merges aesthetics
+            with functionality.
+          </p>
+          <p>
+            Our website’s responsive design ensures a seamless experience
+            across all devices. The color scheme—a soft navy-gray (primary)
+            paired with a warm orange accent (secondary)—helps emphasize
+            important elements while maintaining readability.
+          </p>
+          <p>
+            Our approach revolved around strong typography, consistent spacing,
+            and carefully chosen imagery that communicates professionalism.
+            We hope you enjoy exploring!
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- ====================== CONTACT SECTION ====================== -->
     <section id="contact">
-      <h2>Contact Us</h2>
+      <h2>Get in Touch</h2>
       <p>
-        Have questions or feedback? We’d love to hear from you!
+        Questions? Suggestions? We’d love to hear from you. Reach out using
+        any of the methods below.
       </p>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:info@myproject.com">info@myproject.com</a></li>
-        <li><strong>Location:</strong> 123 Main Street, City, Country</li>
-        <li><strong>Phone:</strong> (123) 456-7890</li>
-      </ul>
+      <div class="contact-grid">
+        <!-- Card 1: Email -->
+        <div class="contact-card">
+          <h3>Email Us</h3>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:info@myrefinedproject.com">info@myrefinedproject.com</a>
+          </p>
+          <p>We typically respond within 24 hours.</p>
+        </div>
+        <!-- Card 2: Location -->
+        <div class="contact-card">
+          <h3>Our Location</h3>
+          <p>123 Main Street</p>
+          <p>City, Country, 00000</p>
+        </div>
+        <!-- Card 3: Phone -->
+        <div class="contact-card">
+          <h3>Give Us a Call</h3>
+          <p>Phone: (123) 456-7890</p>
+          <p>Mon-Fri, 9am-5pm</p>
+        </div>
+      </div>
     </section>
 
     <!-- ====================== FOOTER ====================== -->
     <footer>
-      <p>&copy; 2025 MyProject. All Rights Reserved.</p>
+      <p>&copy; 2025 MyRefinedProject. All Rights Reserved.</p>
+      <div class="footer-social">
+        <a href="#" title="Visit our Facebook">FB</a>
+        <a href="#" title="Visit our Twitter">TW</a>
+        <a href="#" title="Visit our Instagram">IG</a>
+      </div>
     </footer>
 
     <script>
@@ -280,3 +453,4 @@
     </script>
   </body>
 </html>
+
