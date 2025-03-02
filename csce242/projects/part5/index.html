@@ -3,449 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Refined Final Project Website</title>
-    <!--
-      Feel free to replace or add your favorite fonts.
-      Example for Google Fonts:
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      />
-    -->
-    <style>
-      /* Reset and box sizing */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        /* Customizable Color Scheme */
-        --primary-color: #30475e;       /* A sophisticated navy-gray mix */
-        --secondary-color: #f2a365;     /* A soft orange accent */
-        --accent-color: #ececec;        /* Light gray for subtle highlights */
-        --background-color: #fafafa;    /* Very light gray background */
-        --text-color: #333;            /* Primary text color */
-        --heading-font: 'Poppins', sans-serif; /* Example custom font */
-        --body-font: 'Arial', sans-serif;       /* Fallback body font */
-      }
-
-      body {
-        font-family: var(--body-font);
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-      }
-
-      /* ====================== NAVIGATION ====================== */
-      nav {
-        background-color: var(--primary-color);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        position: relative;
-      }
-
-      .nav-brand {
-        font-size: 1.7rem;
-        font-weight: bold;
-        color: #fff;
-        text-decoration: none;
-        font-family: var(--heading-font);
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 1.5rem;
-      }
-
-      .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1rem;
-        transition: color 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--secondary-color);
-      }
-
-      /* Hamburger menu icon (mobile) */
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-      }
-
-      .hamburger div {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px 0;
-        transition: all 0.3s;
-      }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          display: none;
-          flex-direction: column;
-          background-color: var(--primary-color);
-          text-align: center;
-        }
-        .nav-links a {
-          padding: 1rem;
-          border-top: 1px solid rgba(255,255,255,0.15);
-        }
-        .nav-links.show {
-          display: flex;
-        }
-        .hamburger {
-          display: flex;
-        }
-      }
-
-      /* ====================== HEADER ====================== */
-      header {
-        text-align: center;
-        padding: 3rem 1rem;
-        background-color: var(--secondary-color);
-        color: #fff;
-        position: relative;
-      }
-
-      header h1 {
-        font-family: var(--heading-font);
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      header p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      /* ====================== MAIN SECTIONS ====================== */
-      section {
-        padding: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      section h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: var(--primary-color);
-        font-family: var(--heading-font);
-      }
-
-      section p {
-        margin-bottom: 1.5rem;
-      }
-
-      /* ====================== HOME SECTION ====================== */
-      #home {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      #home img {
-        max-width: 600px;
-        width: 100%;
-        height: auto;
-        border: 2px solid #ccc;
-        margin-bottom: 1.5rem;
-      }
-
-      /* ====================== GALLERY SECTION ====================== */
-      #gallery {
-        background-color: var(--accent-color);
-        border-radius: 8px;
-      }
-
-      #gallery p {
-        text-align: center;
-      }
-
-      .images {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .images img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
-
-      /* ====================== ABOUT SECTION ====================== */
-      #about {
-        background-color: #fff;
-        margin-top: 2rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 2rem;
-      }
-
-      #about p {
-        margin-bottom: 1rem;
-      }
-
-      .about-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .about-content img {
-        width: 350px;
-        max-width: 100%;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-      }
-
-      .about-text {
-        flex: 1;
-      }
-
-      /* ====================== CONTACT SECTION ====================== */
-      #contact {
-        margin-top: 2rem;
-      }
-
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 1rem;
-      }
-
-      .contact-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-      }
-
-      .contact-card h3 {
-        margin-bottom: 1rem;
-        font-family: var(--heading-font);
-        color: var(--primary-color);
-      }
-
-      .contact-card p {
-        margin-bottom: 0.5rem;
-      }
-
-      /* ====================== FOOTER ====================== */
-      footer {
-        background-color: var(--primary-color);
-        color: #fff;
-        text-align: center;
-        padding: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      footer p {
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-social {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 0.5rem;
-      }
-
-      .footer-social a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.2rem;
-        transition: color 0.3s;
-      }
-
-      .footer-social a:hover {
-        color: var(--secondary-color);
-      }
-
-      /* ====================== RESPONSIVE DESIGN ====================== */
-      @media (max-width: 576px) {
-        header h1 {
-          font-size: 2rem;
-        }
-        section h2 {
-          font-size: 1.5rem;
-        }
-      }
-    </style>
+    <title>MyWebsite | Home</title>
+    <!-- Link to shared CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Example external font (optional) -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" /> -->
   </head>
-
   <body>
-    <!-- ====================== NAVBAR ====================== -->
+
+    <!-- NAVIGATION -->
     <nav>
-      <a href="#home" class="nav-brand">MyRefinedProject</a>
+      <a href="index.html" class="nav-brand">MyWebsite</a>
       <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
       </div>
       <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
 
-    <!-- ====================== HEADER ====================== -->
+    <!-- HEADER -->
     <header>
-      <h1>Your Project, Perfected</h1>
+      <h1>Welcome to MyWebsite</h1>
       <p>
-        We’ve refined our site to deliver a polished, beautiful, and responsive
-        experience that incorporates feedback from all sides.
+        Your one-stop destination for a beautiful, responsive, and refined online experience.
       </p>
     </header>
 
-    <!-- ====================== HOME SECTION ====================== -->
-    <section id="home">
-      <h2>Welcome to Our Final Iteration</h2>
-      <img
-        src="https://via.placeholder.com/600x400?text=Your+Hero+Image+Here"
-        alt="Placeholder Hero"
-      />
-      <p>
-        This home section gives visitors a first impression of our project.
-        We’ve chosen a balanced color palette and fonts that are easy to read.
-      </p>
-      <p>
-        Take a moment to explore the Gallery, learn more in our About section,
-        or get in touch via the Contact page. Scroll down for more.
-      </p>
-    </section>
-
-    <!-- ====================== GALLERY SECTION ====================== -->
-    <section id="gallery">
-      <h2>Our Featured Gallery</h2>
-      <p>
-        A curated collection of visuals representing our work. All images are
-        free for commercial use, ensuring no copyright issues.
-      </p>
-      <div class="images">
-        <!-- Replace these placeholders with your own images -->
-        <img
-          src="https://via.placeholder.com/400x300?text=Project+Preview+1"
-          alt="Gallery Item 1"
-        />
-        <img
-          src="https://via.placeholder.com/400x300?text=Project+Preview+2"
-          alt="Gallery Item 2"
-        />
-        <img
-          src="https://via.placeholder.com/400x300?text=Project+Preview+3"
-          alt="Gallery Item 3"
-        />
-        <img
-          src="https://via.placeholder.com/400x300?text=Project+Preview+4"
-          alt="Gallery Item 4"
-        />
-        <img
-          src="https://via.placeholder.com/400x300?text=Project+Preview+5"
-          alt="Gallery Item 5"
-        />
-      </div>
-      <p style="text-align:center; margin-top: 1.5rem;">
-        Want to see more? Check out our <a href="#home" style="color: var(--primary-color); text-decoration: underline;">Home</a>
-        or <a href="#about" style="color: var(--primary-color); text-decoration: underline;">About</a> sections.
-      </p>
-    </section>
-
-    <!-- ====================== ABOUT SECTION ====================== -->
-    <section id="about">
-      <h2>About Our Project</h2>
-      <div class="about-content">
-        <img
-          src="https://via.placeholder.com/350x250?text=Teamwork+Image"
-          alt="Teamwork"
-        />
-        <div class="about-text">
+    <!-- HOME SECTION: HERO -->
+    <section>
+      <div class="hero">
+        <div class="hero-text">
+          <h2>Crafted With Care</h2>
           <p>
-            After numerous rounds of feedback from instructors, TAs, and
-            classmates, we’ve arrived at a final design that merges aesthetics
-            with functionality.
+            We've poured our hearts into designing a site that looks fantastic,
+            feels smooth, and answers your every need. Scroll down for more or
+            jump to our Gallery, About, or Contact pages.
           </p>
           <p>
-            Our website’s responsive design ensures a seamless experience
-            across all devices. The color scheme—a soft navy-gray (primary)
-            paired with a warm orange accent (secondary)—helps emphasize
-            important elements while maintaining readability.
+            This homepage includes a bold hero section with text on one side
+            and an eye-catching image on the other.
           </p>
-          <p>
-            Our approach revolved around strong typography, consistent spacing,
-            and carefully chosen imagery that communicates professionalism.
-            We hope you enjoy exploring!
-          </p>
+        </div>
+        <div class="hero-image">
+          <!-- Royalty-free image from Unsplash -->
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxOTk0N3wwfDF8c2VhcmNofDR8fGhlcm98ZW58MHwwfHx8MTY4NzQwMTA4NQ&ixlib=rb-4.0.3&q=80&w=1080"
+            alt="Beautiful Hero"
+          />
         </div>
       </div>
     </section>
 
-    <!-- ====================== CONTACT SECTION ====================== -->
-    <section id="contact">
-      <h2>Get in Touch</h2>
-      <p>
-        Questions? Suggestions? We’d love to hear from you. Reach out using
-        any of the methods below.
-      </p>
-      <div class="contact-grid">
-        <!-- Card 1: Email -->
-        <div class="contact-card">
-          <h3>Email Us</h3>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:info@myrefinedproject.com">info@myrefinedproject.com</a>
-          </p>
-          <p>We typically respond within 24 hours.</p>
-        </div>
-        <!-- Card 2: Location -->
-        <div class="contact-card">
-          <h3>Our Location</h3>
-          <p>123 Main Street</p>
-          <p>City, Country, 00000</p>
-        </div>
-        <!-- Card 3: Phone -->
-        <div class="contact-card">
-          <h3>Give Us a Call</h3>
-          <p>Phone: (123) 456-7890</p>
-          <p>Mon-Fri, 9am-5pm</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================== FOOTER ====================== -->
+    <!-- FOOTER -->
     <footer>
-      <p>&copy; 2025 MyRefinedProject. All Rights Reserved.</p>
+      <p>&copy; 2025 MyWebsite. All Rights Reserved.</p>
       <div class="footer-social">
-        <a href="#" title="Visit our Facebook">FB</a>
-        <a href="#" title="Visit our Twitter">TW</a>
-        <a href="#" title="Visit our Instagram">IG</a>
+        <a href="#">FB</a>
+        <a href="#">TW</a>
+        <a href="#">IG</a>
       </div>
     </footer>
 
+    <!-- JavaScript for Navbar Toggle -->
     <script>
-      // Toggle navigation on mobile
       function toggleMenu() {
         const navLinks = document.getElementById('navLinks');
         navLinks.classList.toggle('show');
@@ -453,4 +79,5 @@
     </script>
   </body>
 </html>
+
 
