@@ -1,25 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Main 242 Home Page</title>
-  <!-- Google Fonts for creative typography -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToolHub - Home</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <!-- Link to external CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">My Creative Site</div>
+      <div class="logo">ToolHub</div>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="preview.html">Preview</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -28,57 +26,34 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Section with Unsplash Image -->
     <section class="hero">
-      <h1>Welcome to My Creative Project</h1>
-      <p>Discover innovative projects with modern design elements.</p>
-      <a href="preview.html" class="btn">View Project</a>
+      <img src="https://source.unsplash.com/1600x900/?workshop" alt="Workshop scene" />
+      <h1>Welcome to ToolHub</h1>
+      <p>
+        Your one-stop destination for all DIY and professional tool needs. Explore
+        our collection of power tools, hand tools, and accessories designed to help you
+        transform your projects into reality.
+      </p>
+      <a href="shop.html" class="btn">Start Shopping</a>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section class="projects">
-      <h2>Featured Projects</h2>
-      <div class="project-grid">
-        <!-- Project One -->
-        <div class="project-card">
-          <!-- Unsplash Photo by Fotis Fotopoulos -->
-          <img
-            src="https://images.unsplash.com/photo-1559814043-0b93528c5a84?auto=format&fit=crop&w=1080&q=80"
-            alt="Project One"
-          />
-          <h3>Project One</h3>
-          <p>A brief creative description of project one.</p>
-        </div>
-        <!-- Project Two -->
-        <div class="project-card">
-          <!-- Unsplash Photo by Kevin Bhagat -->
-          <img
-            src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1080&q=80"
-            alt="Project Two"
-          />
-          <h3>Project Two</h3>
-          <p>A brief creative description of project two.</p>
-        </div>
-        <!-- Project Three -->
-        <div class="project-card">
-          <!-- Unsplash Photo by Marissa Grootes -->
-          <img
-            src="https://images.unsplash.com/photo-1578916171720-6b3891f11d2a?auto=format&fit=crop&w=1080&q=80"
-            alt="Project Three"
-          />
-          <h3>Project Three</h3>
-          <p>A brief creative description of project three.</p>
-        </div>
-      </div>
+    <!-- Additional Content -->
+    <section class="container">
+      <h2 class="section-heading">Why Choose ToolHub?</h2>
+      <p>
+        We empower creators with reliable tools, competitive pricing, and quality resources.
+        Whether you’re a seasoned craftsman or a first-time DIYer, our mission is to make your
+        projects a success.
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Creative Projects by Yuheng Zhu</p>
+    <p>&copy; 2025 ToolHub by Yuheng Zhu</p>
   </footer>
 
   <script>
-    // Mobile menu toggle functionality
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     menuToggle.addEventListener('click', () => {
@@ -87,3 +62,4 @@
   </script>
 </body>
 </html>
+
