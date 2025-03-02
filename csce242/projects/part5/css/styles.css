@@ -74,7 +74,7 @@ nav {
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 56px; /* nav's height */
+    top: 56px; /* matches nav's height */
     right: 0;
     background: #222;
     flex-direction: column;
@@ -94,7 +94,7 @@ nav {
 
 /* -------------------- Hero Section -------------------- */
 .hero {
-  background: #f2a365; /* from existing color scheme */
+  background: #f2a365; /* from your color scheme */
   color: #fff;
   text-align: center;
   padding: 4rem 1rem;
@@ -130,7 +130,7 @@ nav {
 .projects h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #30475e; /* from existing scheme */
+  color: #30475e; /* from your existing scheme */
 }
 
 .project-grid {
