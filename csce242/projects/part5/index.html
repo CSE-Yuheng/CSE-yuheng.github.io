@@ -1,74 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>MyProject | Home</title>
-    <!-- Shared CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main 242 Home Page</title>
+  <!-- Google Fonts for creative typography -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
     <nav>
-      <a href="index.html" class="nav-brand">MyProject Logo</a>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
+      <div class="logo">My Creative Site</div>
+      <ul class="nav-links">
+        <!-- Use 'active' class for the current page -->
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="preview.html">Preview</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
     </nav>
+  </header>
 
-    <!-- HEADER -->
-    <header>
-      <h1>Your Project, Perfected</h1>
-      <p>
-        Integrating all your feedback into a polished, visually appealing, and
-        fully responsive multi-page website.
-      </p>
-    </header>
-
-    <!-- HOME SECTION -->
-    <section>
-      <h2>Welcome to Our Refined Project</h2>
-      <p>
-        We took the code from our previous single-page site and split it into
-        separate pages for better organization: Home, Gallery, About, and Contact.
-        This structure retains the same color scheme, fonts, and core design.
-      </p>
-      <p>
-        Below is a sample hero image (placeholder). Replace it with your own or
-        a royalty-free image that best represents your project theme.
-      </p>
-      <div class="images">
-        <img
-          src="https://via.placeholder.com/600x400?text=Hero+Image"
-          alt="Hero Placeholder"
-        />
-      </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Welcome to My Creative Project</h1>
+      <p>Discover innovative projects with modern design elements.</p>
+      <a href="preview.html" class="btn">View Project</a>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>&copy; 2025 MyProject. All Rights Reserved.</p>
-      <div class="footer-social">
-        <a href="#">FB</a>
-        <a href="#">TW</a>
-        <a href="#">IG</a>
+    <!-- Featured Projects Section -->
+    <section class="projects">
+      <h2>Featured Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img
+            src="https://fakeimg.pl/600x400/?text=Project+One"
+            alt="Project One"
+          />
+          <h3>Project One</h3>
+          <p>A brief creative description of project one.</p>
+        </div>
+        <div class="project-card">
+          <img
+            src="https://fakeimg.pl/600x400/?text=Project+Two"
+            alt="Project Two"
+          />
+          <h3>Project Two</h3>
+          <p>A brief creative description of project two.</p>
+        </div>
+        <div class="project-card">
+          <img
+            src="https://fakeimg.pl/600x400/?text=Project+Three"
+            alt="Project Three"
+          />
+          <h3>Project Three</h3>
+          <p>A brief creative description of project three.</p>
+        </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <!-- JavaScript for Navbar Toggle -->
-    <script>
-      function toggleMenu() {
-        const navLinks = document.getElementById('navLinks');
-        navLinks.classList.toggle('show');
-      }
-    </script>
-  </body>
+  <footer>
+    <p>&copy; 2025 Creative Projects by Yuheng Zhu</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
 </html>
+
