@@ -1,0 +1,247 @@
+/* style.css */
+
+/* -------------------- RESET & GLOBAL -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Adjust to your brand palette */
+  --primary-color: #2b2d42;      /* Dark navy / steel */
+  --secondary-color: #ef233c;    /* Vivid accent (red / pink) */
+  --background-color: #f8f9fa;   /* Light gray background */
+  --text-color: #333;            /* Main text color */
+  --heading-font: 'Poppins', sans-serif; /* Example heading font */
+  --body-font: 'Arial', sans-serif;      /* Body fallback font */
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* -------------------- NAVBAR -------------------- */
+nav {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-brand {
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-family: var(--heading-font);
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* Hamburger for mobile screens */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+
+/* -------------------- RESPONSIVE NAV -------------------- */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px; /* Just below the nav bar */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    text-align: center;
+    display: none;
+    padding-bottom: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* -------------------- HEADERS & SECTIONS -------------------- */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+header h1 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* -------------------- HERO / HOME PAGE -------------------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+}
+
+/* -------------------- GALLERY -------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* -------------------- ABOUT -------------------- */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* -------------------- CONTACT -------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.contact-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.footer-social {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--secondary-color);
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  section h2 {
+    font-size: 1.75rem;
+  }
+}
