@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToolHub - Circular Saw</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ToolHub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="product-detail">
+      <img src="images/Circular Saw.jpg" alt="Circular Saw" />
+      <div class="product-info">
+        <h2>Circular Saw</h2>
+        <p>
+          Our circular saw offers precision cutting for a variety of materials. Equipped with a high-torque motor and a durable blade, this tool is perfect for both professional projects and DIY tasks.
+        </p>
+        <p>
+          Key Features:
+          <ul>
+            <li>Powerful motor for fast cutting</li>
+            <li>Adjustable cutting depth</li>
+            <li>Safety guard and ergonomic design</li>
+            <li>Lightweight for ease of use</li>
+          </ul>
+        </p>
+        <p class="price">$99.99</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ToolHub by Yuheng Zhu</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
