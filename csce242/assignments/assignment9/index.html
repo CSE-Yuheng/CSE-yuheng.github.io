@@ -8,11 +8,30 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
   <style>
+    /* Set background color for the entire page */
+    body {
+      background-color: #f2f2f2;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Center the header text */
+    h1, p {
+      text-align: center;
+    }
+    
+    /* Container for all pizzas, using Flexbox to center items */
+    #pizzaList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* centers items horizontally */
+      gap: 20px;
+      padding: 20px;
+    }
+
     /* Basic styling for your pizza “cards” */
     .pizza-section {
-      display: inline-block;
       width: 200px;
-      margin: 10px;
       text-align: center;
       cursor: pointer;
       border: 1px solid #ccc;
@@ -177,4 +196,5 @@
   </script>
 </body>
 </html>
+
 
