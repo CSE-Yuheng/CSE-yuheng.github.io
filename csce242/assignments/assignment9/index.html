@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 9 - Pizza Modal</title>
+  
+  <!-- W3.CSS for Modal Styles -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+  <style>
+    /* Basic styling for your pizza “cards” */
+    .pizza-section {
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 10px;
+      background-color: #fafafa;
+      transition: transform 0.2s;
+    }
+    .pizza-section:hover {
+      transform: scale(1.05);
+    }
+    .pizza-section img {
+      width: 180px;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    /* Modal image rotation animation */
+    .rotate-animation {
+      animation: spin 1s linear;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Assignment 9 - Pizza Modal Example</h1>
+  <p>Click on a pizza below to see more details.</p>
+
+  <!-- Container to hold the pizzas dynamically -->
+  <div id="pizzaList"></div>
+
+  <!-- The Modal (hidden by default) -->
+  <div id="pizzaModal" class="w3-modal" onclick="this.style.display='none'">
+    <div class="w3-modal-content w3-animate-zoom" style="max-width:500px; position:relative;">
+      <!-- Close button -->
+      <span onclick="document.getElementById('pizzaModal').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+
+      <div class="w3-container" style="padding:20px;" id="modalContent">
+        <!-- Image that rotates on open -->
+        <img id="modalImage" src="" alt="Pizza" style="width:100%;border-radius:4px;" />
+
+        <!-- Pizza Details -->
+        <h2 id="modalName"></h2>
+        <p id="modalIngredients"></p>
+        <p id="modalSauce"></p>
+        <p id="modalCheese"></p>
+        <p id="modalCrust"></p>
+        <p id="modalPrice"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. Create the Pizza class
+    class Pizza {
+      constructor(name, ingredients, sauce, cheese, crust, price, image) {
+        this.name = name;
+        this.ingredients = ingredients;
+        this.sauce = sauce;
+        this.cheese = cheese;
+        this.crust = crust;
+        this.price = price;
+        this.image = image;
+      }
+
+      // 2. Method that returns a small HTML “section” to be inserted into the page
+      //    We’ll pass an index so that when clicked, it opens the correct pizza’s modal
+      getSection(index) {
+        return `
+          <section class="pizza-section" onclick="openModal(${index})">
+            <h3>${this.name}</h3>
+            <img src="${this.image}" alt="${this.name}" />
+          </section>
+        `;
+      }
+    }
+
+    // 3. Create at least five pizza instances
+    const pizzas = [
+      new Pizza(
+        "Hawaiian",
+        "Ham, Pineapple",
+        "Tomato Sauce",
+        "Mozzarella",
+        "Regular Crust",
+        "$14.99",
+        "images/Hawaiian.jpg"
+      ),
+      new Pizza(
+        "Buffalo Chicken Ranch",
+        "Chicken, Buffalo Sauce, Onions",
+        "Ranch Sauce",
+        "Mozzarella & Cheddar",
+        "Thin Crust",
+        "$16.99",
+        "images/Buffalo.jpg"
+      ),
+      new Pizza(
+        "Margarita",
+        "Basil, Fresh Tomatoes",
+        "Olive Oil",
+        "Fresh Mozzarella",
+        "Thin Crust",
+        "$19.20",
+        "images/Margarita.jpg"
+      ),
+      new Pizza(
+        "Pepperoni",
+        "Pepperoni",
+        "Tomato Sauce",
+        "Mozzarella",
+        "Stuffed Crust",
+        "$12.99",
+        "images/Pepperoni.jpg"
+      ),
+      new Pizza(
+        "Veggie",
+        "Mushrooms, Peppers, Onions, Olives, Broccoli",
+        "Tomato Sauce",
+        "Vegan Cheese",
+        "Gluten-Free Crust",
+        "$14.99",
+        "images/Veggie.jpg"
+      )
+    ];
+
+    // 4. Insert the pizza sections into the DOM
+    const pizzaList = document.getElementById("pizzaList");
+    pizzas.forEach((pizza, index) => {
+      pizzaList.innerHTML += pizza.getSection(index);
+    });
+
+    // 5. Open Modal function
+    function openModal(index) {
+      const pizza = pizzas[index];
+
+      // Populate modal content
+      document.getElementById("modalName").textContent        = pizza.name;
+      document.getElementById("modalIngredients").textContent = "Ingredients: " + pizza.ingredients;
+      document.getElementById("modalSauce").textContent       = "Sauce: " + pizza.sauce;
+      document.getElementById("modalCheese").textContent      = "Cheese: " + pizza.cheese;
+      document.getElementById("modalCrust").textContent       = "Crust: " + pizza.crust;
+      document.getElementById("modalPrice").textContent       = "Price: " + pizza.price;
+      document.getElementById("modalImage").src               = pizza.image;
+
+      // Trigger the rotate animation each time modal opens:
+      const modalImg = document.getElementById("modalImage");
+      modalImg.classList.remove("rotate-animation");
+      // Force reflow to restart the animation
+      void modalImg.offsetWidth;
+      // Re-add the class
+      modalImg.classList.add("rotate-animation");
+
+      // Show the modal
+      document.getElementById("pizzaModal").style.display = "block";
+    }
+  </script>
+</body>
+</html>
 
