@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToolHub - Shop</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ToolHub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="section-heading">Our Tool Collection</h2>
+    <p>
+      Browse our curated selection of high-quality tools. Click on any item for
+      more details.
+    </p>
+
+    <section class="products-grid">
+      <!-- Product 1: Cordless Drill -->
+      <div class="product-card">
+        <img src="images/Cordless Drill.jpg" alt="Cordless Drill" />
+        <div class="card-content">
+          <h3>Cordless Drill</h3>
+          <p>Powerful and versatile drill for all your DIY tasks.</p>
+          <a href="product1.html">View Details</a>
+        </div>
+      </div>
+
+      <!-- Product 2: Circular Saw -->
+      <div class="product-card">
+        <img src="images/Circular Saw.jpg" alt="Circular Saw" />
+        <div class="card-content">
+          <h3>Circular Saw</h3>
+          <p>Cut through wood, plastic, and more with ease.</p>
+          <a href="product2.html">View Details</a>
+        </div>
+      </div>
+
+      <!-- Product 3: Hand Tool Set -->
+      <div class="product-card">
+        <img src="images/Hand Tool Set.jpg" alt="Hand Tool Set" />
+        <div class="card-content">
+          <h3>Hand Tool Set</h3>
+          <p>Essential kit for every workshop and home toolbox.</p>
+          <a href="product3.html">View Details</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ToolHub by Yuheng Zhu</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
