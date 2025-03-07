@@ -10,6 +10,21 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Inline CSS for demonstration — ideally place in styles.css */
+    .tool-card img {
+      /* Restricts images from blowing up beyond 300px width */
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .tool-card {
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 <body>
   <!-- NOTE FOR GRADING: The JSON data is fetched and displayed in the section below. -->
@@ -19,7 +34,8 @@
       <div class="logo">ToolHub - Part 6</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html" class="active">Shop (JSON Demo)</a></li>
+        <!-- Changed link text from 'Shop (JSON Demo)' to just 'Shop' -->
+        <li><a href="shop.html" class="active">Shop</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -115,8 +131,7 @@
 
   <!-- JavaScript to fetch and display JSON data -->
   <script>
-    // 1) Replace with YOUR actual GitHub Pages URL to tools.json:
-    // Make sure tools.json is actually in your part6 folder.
+    // 1) Update with YOUR actual GitHub Pages URL to tools.json:
     const jsonURL = "https://CSE-yuheng.github.io/csce242/projects/part6/tools.json";
 
     // 2) Fetch JSON data from the URL
@@ -161,5 +176,6 @@
   </script>
 </body>
 </html>
+
 
 
