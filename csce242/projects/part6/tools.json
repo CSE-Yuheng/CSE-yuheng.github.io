@@ -1,66 +1,67 @@
 [
   {
     "_id": 1,
-    "name": "Cordless Drill",
-    "price": 79.99,
-    "brand": "DrillMaster",
-    "description": "A lightweight cordless drill perfect for all basic DIY tasks.",
-    "img_name": "images/drill.png"
+    "name": "Choosing a Saw",
+    "price": 0,
+    "brand": "SawGuide",
+    "description": "Tips on selecting the best saw for any project.",
+    "img_name": "images/Choosing a Saw.jpg"
   },
   {
     "_id": 2,
     "name": "Circular Saw",
     "price": 99.99,
     "brand": "SawPro",
-    "description": "Cuts through wood, plastic, and more with ease.",
-    "img_name": "images/circular_saw.png"
+    "description": "Cut through wood, plastic, and more with ease.",
+    "img_name": "images/Circular Saw.jpg"
   },
   {
     "_id": 3,
-    "name": "Hand Tool Set",
-    "price": 49.99,
-    "brand": "HandyKit",
-    "description": "All the essential hand tools in one compact case.",
-    "img_name": "images/toolset.png"
+    "name": "Cordless Drill",
+    "price": 79.99,
+    "brand": "DrillMaster",
+    "description": "Lightweight yet powerful drill for everyday tasks.",
+    "img_name": "images/Cordless Drill.jpg"
   },
   {
     "_id": 4,
-    "name": "Impact Driver",
-    "price": 89.99,
-    "brand": "BoltForce",
-    "description": "High torque for tough fastening and drilling tasks.",
-    "img_name": "images/impact_driver.png"
+    "name": "Essential Tools",
+    "price": 29.99,
+    "brand": "ToolEssentials",
+    "description": "A curated set of must-have basics for any toolbox.",
+    "img_name": "images/Essential Tools.jpg"
   },
   {
     "_id": 5,
-    "name": "Jigsaw",
-    "price": 59.99,
-    "brand": "FlexiCut",
-    "description": "Ideal for curved cuts and fine woodworking.",
-    "img_name": "images/jigsaw.png"
+    "name": "Hand Tool Set",
+    "price": 49.99,
+    "brand": "HandyKit",
+    "description": "All the essential hand tools in one compact set.",
+    "img_name": "images/Hand Tool Set.jpg"
   },
   {
     "_id": 6,
-    "name": "Bench Grinder",
-    "price": 79.99,
-    "brand": "GrindTech",
-    "description": "Polish and sharpen metal tools with precision.",
-    "img_name": "images/bench_grinder.png"
+    "name": "Tool Safety",
+    "price": 0,
+    "brand": "SafetyFirst",
+    "description": "A helpful guide to safely handling common power tools.",
+    "img_name": "images/Tool Safety.jpg"
   },
   {
     "_id": 7,
-    "name": "Random Orbital Sander",
-    "price": 64.99,
-    "brand": "SmoothFinish",
-    "description": "Achieve swirl-free sanding on wood, metal, and plastic.",
-    "img_name": "images/orbital_sander.png"
+    "name": "Workshop Scene",
+    "price": 0,
+    "brand": "WorkshopShots",
+    "description": "High-resolution shot of a well-organized workshop.",
+    "img_name": "images/Workshop scene.jpg"
   },
   {
     "_id": 8,
-    "name": "Table Saw",
-    "price": 199.99,
-    "brand": "PrecisionCut",
-    "description": "A powerful saw for serious woodworking projects.",
-    "img_name": "images/table_saw.png"
+    "name": "Bonus Tools",
+    "price": 59.99,
+    "brand": "ExtraGear",
+    "description": "An additional set of hardware for advanced projects.",
+    "img_name": "images/Hand Tool Set.jpg"
   }
 ]
+
