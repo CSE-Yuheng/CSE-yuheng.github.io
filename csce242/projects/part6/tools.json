@@ -1,0 +1,66 @@
+[
+  {
+    "_id": 1,
+    "name": "Cordless Drill",
+    "price": 79.99,
+    "brand": "DrillMaster",
+    "description": "A lightweight cordless drill perfect for all basic DIY tasks.",
+    "img_name": "images/drill.png"
+  },
+  {
+    "_id": 2,
+    "name": "Circular Saw",
+    "price": 99.99,
+    "brand": "SawPro",
+    "description": "Cuts through wood, plastic, and more with ease.",
+    "img_name": "images/circular_saw.png"
+  },
+  {
+    "_id": 3,
+    "name": "Hand Tool Set",
+    "price": 49.99,
+    "brand": "HandyKit",
+    "description": "All the essential hand tools in one compact case.",
+    "img_name": "images/toolset.png"
+  },
+  {
+    "_id": 4,
+    "name": "Impact Driver",
+    "price": 89.99,
+    "brand": "BoltForce",
+    "description": "High torque for tough fastening and drilling tasks.",
+    "img_name": "images/impact_driver.png"
+  },
+  {
+    "_id": 5,
+    "name": "Jigsaw",
+    "price": 59.99,
+    "brand": "FlexiCut",
+    "description": "Ideal for curved cuts and fine woodworking.",
+    "img_name": "images/jigsaw.png"
+  },
+  {
+    "_id": 6,
+    "name": "Bench Grinder",
+    "price": 79.99,
+    "brand": "GrindTech",
+    "description": "Polish and sharpen metal tools with precision.",
+    "img_name": "images/bench_grinder.png"
+  },
+  {
+    "_id": 7,
+    "name": "Random Orbital Sander",
+    "price": 64.99,
+    "brand": "SmoothFinish",
+    "description": "Achieve swirl-free sanding on wood, metal, and plastic.",
+    "img_name": "images/orbital_sander.png"
+  },
+  {
+    "_id": 8,
+    "name": "Table Saw",
+    "price": 199.99,
+    "brand": "PrecisionCut",
+    "description": "A powerful saw for serious woodworking projects.",
+    "img_name": "images/table_saw.png"
+  }
+]
