@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToolHub - Cordless Drill</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ToolHub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="product-detail">
+      <img src="images/Cordless Drill.jpg" alt="Cordless Drill" />
+      <div class="product-info">
+        <h2>Cordless Drill</h2>
+        <p>
+          This cordless drill is the perfect companion for all your DIY tasks.
+          It features a powerful motor, multiple torque settings, and a compact,
+          lightweight design that allows you to work in tight spaces.
+        </p>
+        <p>
+          Key Features:
+          <ul>
+            <li>18V Lithium-ion battery</li>
+            <li>Two-speed transmission</li>
+            <li>LED work light</li>
+            <li>Ergonomic handle for comfort</li>
+          </ul>
+        </p>
+        <p class="price">$79.99</p>
+        <button class="btn">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ToolHub by Yuheng Zhu</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
