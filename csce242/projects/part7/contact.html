@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToolHub - Part 7 Contact</title>
+  <!-- Replace with your own fonts if you prefer -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Inline CSS for demonstration. Ideally, put this in styles.css. */
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    /* Two-column layout on larger screens, single column on small screens */
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Form Styles */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button[type="submit"] {
+      align-self: flex-start;
+      background: #2563eb;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: #4f46e5;
+    }
+
+    .status-message {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+
+    /* iFrame Container */
+    .iframe-container {
+      position: relative;
+      /* Responsive aspect ratio for YouTube or Maps */
+      padding-bottom: 56.25%; 
+      height: 0;
+      overflow: hidden;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ToolHub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <!-- Make sure this points to the new Part 7 contact page or updates existing contact -->
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2 class="section-heading">Contact Me</h2>
+      <p>
+        Have a question about our tools, or just want to say hello? Fill out the
+        form below and we’ll get back to you as soon as possible. We’ve also
+        included a helpful map of our main office (or a related YouTube video,
+        etc.) in case you want to visit or learn more about us.
+      </p>
+    </section>
+
+    <!-- The responsive two-column layout (form + iFrame) -->
+    <section class="contact-container">
+
+      <!-- Contact Form Column -->
+      <div>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name <span style="color:red">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span style="color:red">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span style="color:red">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+          <!-- Where success/error messages appear -->
+          <div id="statusMessage" class="status-message"></div>
+        </form>
+      </div>
+
+      <!-- iFrame (Map or Video) Column -->
+      <div>
+        <h3>Visit Us (Example Google Map)</h3>
+        <p>
+          Check out our main location on the map below. We’re open Monday–Friday
+          from 9am–5pm.
+        </p>
+        <div class="iframe-container">
+          <!-- Example: Google Map embed for New York City -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24137.839518528093!2d-73.99350985610807!3d40.74047627968282!2m3!1f0!2f0!3f0!3m2!
+                 1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259af18d05417%3A0x9ac6bb71c49ef929!2sManhattan!
+                 5e0!3m2!1sen!2sus!4v1683158137378!5m2!1sen!2sus"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ToolHub by Yuheng Zhu</p>
+  </footer>
+
+  <script>
+    // Toggle mobile nav (optional)
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Contact form submission with async fetch
+    // Using Formspree as an example (https://formspree.io/)
+    // 1) Sign up at Formspree, create a form, get your unique endpoint:
+    //    e.g., "https://formspree.io/f/mqkwyxyz"
+    const contactForm = document.getElementById("contactForm");
+    const statusMessage = document.getElementById("statusMessage");
+    const formEndpoint = "https://formspree.io/f/yourFormId"; // Replace with your real endpoint
+
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault(); // Don't reload page
+
+      // Basic HTML5 validation check
+      if (!contactForm.checkValidity()) {
+        statusMessage.textContent = "Please fill out all required fields correctly.";
+        statusMessage.className = "status-message error";
+        return;
+      }
+
+      // Collect form data
+      const formData = new FormData(contactForm);
+
+      try {
+        // Send a POST request to your form service
+        const response = await fetch(formEndpoint, {
+          method: "POST",
+          body: formData,
+          headers: {
+            // no JSON content-type for Formspree if sending formData
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
+        }
+
+        // If successful
+        statusMessage.textContent = "Thank you! Your message has been sent.";
+        statusMessage.className = "status-message success";
+
+        // Clear form fields
+        contactForm.reset();
+      } catch (error) {
+        // Show error on screen
+        statusMessage.textContent = "An error occurred. Please try again later.";
+        statusMessage.className = "status-message error";
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>
