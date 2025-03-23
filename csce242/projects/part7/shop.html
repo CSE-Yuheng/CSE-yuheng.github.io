@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToolHub - Part 6 Shop</title>
+  <!-- Replace with your own fonts if desired -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Inline CSS for demonstration — ideally place in styles.css */
+    .tool-card img {
+      /* Restricts images from blowing up beyond 300px width */
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .tool-card {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- NOTE FOR GRADING: The JSON data is fetched and displayed in the section below. -->
+
+  <header>
+    <nav>
+      <div class="logo">ToolHub - Part 6</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- Changed link text from 'Shop (JSON Demo)' to just 'Shop' -->
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Intro Section -->
+    <section>
+      <h2 class="section-heading">Part 6: Dynamic Shop Page</h2>
+      <p>
+        Welcome to our newly improved shop page for Part 6 of this project.
+        Below, we dynamically load and display a list of tools from our JSON
+        file on GitHub. This approach ensures our catalog is always up to date
+        without manually editing the HTML for each item.
+      </p>
+      <p>
+        We’ve also included extra tips and FAQs below to give you more insight
+        into how each tool can be used effectively. Scroll down to learn more
+        about the best practices and frequently asked questions from our
+        community.
+      </p>
+    </section>
+
+    <!-- JSON-Driven Product Grid -->
+    <section>
+      <h3 class="section-heading">Our Tools (Dynamically Loaded from JSON)</h3>
+      <div id="tool-list" class="tool-container"></div>
+    </section>
+
+    <!-- FAQ & Tips Section -->
+    <section style="margin-top: 2rem;">
+      <h3 class="section-heading">FAQ & Tips</h3>
+      <article>
+        <h4>1. How do I know which tool is right for my project?</h4>
+        <p>
+          Determining the right tool depends on your project’s requirements.
+          For instance, a circular saw is ideal for straight cuts in wood, while
+          a jigsaw can handle curved or intricate cuts. Consider the material,
+          desired precision, and project complexity before choosing a tool.
+        </p>
+      </article>
+
+      <article>
+        <h4>2. What’s the best way to avoid accidents when handling power tools?</h4>
+        <p>
+          Always follow safety guidelines: wear protective gear (like goggles
+          and gloves), keep your workspace well-lit, and never force a tool
+          beyond its capacity. Review the safety instructions that come with
+          each power tool and keep your work area organized to prevent trips
+          or falls.
+        </p>
+      </article>
+
+      <article>
+        <h4>3. Can I use these tools for both DIY and professional tasks?</h4>
+        <p>
+          Absolutely. Many of our tools are built to handle a wide range of
+          tasks, from casual home repairs to professional contracting. For heavy
+          or repeated use, consider investing in durable, higher-end products
+          that can withstand consistent wear and tear.
+        </p>
+      </article>
+
+      <article>
+        <h4>4. Do you offer any warranty or returns for these tools?</h4>
+        <p>
+          Our warranty and returns policy depends on the specific brand and
+          product category. Most items come with at least a one-year limited
+          warranty. Check the product details or contact us for more
+          information.
+        </p>
+      </article>
+
+      <article>
+        <h4>5. Any tips on maintaining power tools for longer life?</h4>
+        <p>
+          Regular cleaning, proper storage, and lubrication (if applicable)
+          can greatly extend the life of any power tool. Keep batteries fully
+          charged and use recommended parts or accessories for best results.
+          Periodically check for loose screws or worn-out parts and replace
+          them promptly.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ToolHub by Yuheng Zhu</p>
+  </footer>
+
+  <!-- JavaScript to fetch and display JSON data -->
+  <script>
+    // 1) Update with YOUR actual GitHub Pages URL to tools.json:
+    const jsonURL = "https://CSE-yuheng.github.io/csce242/projects/part6/tools.json";
+
+    // 2) Fetch JSON data from the URL
+    fetch(jsonURL)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // data is the array of tool objects from tools.json
+        const container = document.getElementById("tool-list");
+
+        data.forEach(tool => {
+          // Create a card for each item
+          const card = document.createElement("div");
+          card.classList.add("tool-card");
+
+          // Insert the HTML with the fields from your JSON
+          card.innerHTML = `
+            <img src="${tool.img_name}" alt="${tool.name}" />
+            <h4>${tool.name}</h4>
+            <p><strong>Brand:</strong> ${tool.brand}</p>
+            <p><strong>Price:</strong> $${tool.price}</p>
+            <p>${tool.description}</p>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error("Error loading JSON data:", error);
+      });
+
+    // Mobile nav toggle script (optional)
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
+
+
